@@ -5,8 +5,8 @@ const navLinks = [
   { path: "/about", label: "About" },
   { path: "/members", label: "Members" },
   { path: "/monthly-ratings", label: "Monthly Ratings" },
-  { path: "/annual-summary", label: "Annual Summary" },
-  { path: "/festival-ratings", label: "Festival Ratings" },
+  { path: "/annual-summary", label: "Annual Top 10" },
+  { path: "/festival-ratings", label: "Film Festivals" },
   { path: "/reviews", label: "Reviews" },
   { path: "/news", label: "News" },
 ];
@@ -21,7 +21,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="SOLARIS" 
-            className="h-12 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
         

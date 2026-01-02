@@ -1,73 +1,37 @@
-# Welcome to your Lovable project
+# SOLARIS
 
-## Project info
+*A Chinese cinephile collective.*
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## About
 
-There are several ways of editing your application.
+欢迎来到 **SOLARIS（索拉里斯）**。
 
-**Use Lovable**
+SOLARIS 是一个聚焦电影、影像文化与观影经验的中国影迷组织。  
+我们记录光落在银幕时自己眼中的影像，讨论它们留下的痕迹与感受，并在分歧之中，尝试寻找更丰富、更深远的洞见。
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+在这里，我们提供一个不断延展的交流平台，呈现多元视角，共同探讨电影的可能性与边界。
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## English
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Welcome to **SOLARIS** — a Chinese cinephile collective dedicated to the discussion and exploration of cinema, viewing experiences, and film culture.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+We attend to the light as it falls on the screen, reflect on how it lingers in our minds and emotions, and within moments of divergence, seek deeper and more nuanced insights.
 
-Follow these steps:
+SOLARIS is an evolving platform where diverse perspectives converge, offering space to reflect on, debate, and expand the possibilities and boundaries of cinema.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Website
 
-# Step 3: Install the necessary dependencies.
-npm i
+🔗 https://solaris-cinema.netlify.app/
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## Notes
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Film ratings, score sheets, and editorial content are continuously updated on the website.
+- This repository contains the source code for the SOLARIS website.

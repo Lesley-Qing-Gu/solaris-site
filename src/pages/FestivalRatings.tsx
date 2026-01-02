@@ -21,103 +21,29 @@ interface FestivalData {
 const festivalData: FestivalData[] = [
   {
     name: "Venice Film Festival",
-    year: 2024,
+    year: 2025,
     films: [
       {
-        film: "The Brutalist",
-        director: "Brady Corbet",
-        year: 2024,
-        rating: "8.5",
-        note: "Silver Lion for Best Direction. Deserved more.",
-        image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&h=600&fit=crop",
-      },
-      {
-        film: "The Room Next Door",
-        director: "Pedro Almodóvar",
-        year: 2024,
-        rating: "7.6",
-        note: "Almodóvar's English-language debut. Tender, if minor.",
-        image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=600&fit=crop",
-      },
-      {
-        film: "Queer",
-        director: "Luca Guadagnino",
-        year: 2024,
+        film: "Father Mother Sister Brother",
+        director: "Jim Jarmusch",
+        year: 2025,
         rating: "7.2",
-        note: "Hallucinatory Burroughs. Craig unrecognizable.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop",
+        note: "父和母段的梳理，佯装，拘谨，熟悉与陌生在极小的空间内构建了“迈克·李”的家庭餐桌生态。姐弟段镜头摇移才恍然人去楼空，前两幕瞥见的照片才成为追忆之物。于是三段的叙事不需要通过任何时空相接的巧合形成联系。怀揣不同的情绪驱车拜访，水、茶、咖啡进行沟通的试探，在家庭的谱系中我们都能找到自己的位置，用互联的情感编织紧密的网络。几乎是最好的贾木许，用温柔的笔触与孤独的情绪重现Anthology film的真正价值。——— Cardinal",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/0/4/5/3/3/8/1045338-father-mother-sister-brother-0-1000-0-1500-crop.jpg?v=37e9e87d41",
       },
     ],
   },
   {
-    name: "Cannes Film Festival",
-    year: 2024,
+    name: "Locarno Film Festival",
+    year: 2025,
     films: [
       {
-        film: "Anora",
-        director: "Sean Baker",
-        year: 2024,
-        rating: "7.8",
-        note: "Palme d'Or winner. Chaotic energy that never settles.",
-        image: "https://images.unsplash.com/photo-478720568477-152d9b164e26?w=400&h=600&fit=crop",
-      },
-      {
-        film: "Emilia Pérez",
-        director: "Jacques Audiard",
-        year: 2024,
-        rating: "6.9",
-        note: "Bold but exhausting. Genre-defying or genre-confused?",
-        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop",
-      },
-      {
-        film: "The Substance",
-        director: "Coralie Fargeat",
-        year: 2024,
-        rating: "7.4",
-        note: "Body horror as industry critique. Unsubtle but effective.",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
-      },
-    ],
-  },
-  {
-    name: "Berlin Film Festival",
-    year: 2024,
-    films: [
-      {
-        film: "Dahomey",
-        director: "Mati Diop",
-        year: 2024,
-        rating: "7.8",
-        note: "Golden Bear winner. Haunting meditation on repatriation.",
-        image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=600&fit=crop",
-      },
-    ],
-  },
-  {
-    name: "Venice Film Festival",
-    year: 2023,
-    films: [
-      {
-        film: "Poor Things",
-        director: "Yorgos Lanthimos",
-        year: 2023,
-        rating: "8.4",
-        note: "Golden Lion. Lanthimos at his most exuberant.",
-        image: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
-      },
-    ],
-  },
-  {
-    name: "Cannes Film Festival",
-    year: 2023,
-    films: [
-      {
-        film: "Anatomy of a Fall",
-        director: "Justine Triet",
-        year: 2023,
-        rating: "8.2",
-        note: "Palme d'Or. Marriage as crime scene.",
-        image: "https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&h=600&fit=crop",
+        film: "Mektoub, My Love: Canto Due",
+        director: "Abdellatif Kechiche",
+        year: 2025,
+        rating: "8.0",
+        note: "角色们仍然延续着以往的状态，更少的面孔聚集的场景中，人物的性格和本质更愈显现了。开场新角色“好莱坞”制片人和演员夫妇在家庭餐厅用餐，那片再熟悉不过的沙滩上多了一张巴黎游客的新面孔。Amin尚未现身，却仿佛有一股磁力，不同场景下关系的走向总向他聚拢，他是世界的中心，永远开放地承接其他角色的困境与挣扎；而Tony，作为Amin的反面，沉沦于欲望，正是所有麻烦的来源。 更多对Tony的刻画使得两角色更接近于并置的状态和一体两面的关系，我们从前作Amin内敛的内心世界走出，在不同以往，持续加码的Drama之中承受着撕裂。欧洲艺术电影与“好莱坞”商业化的创作理念上的矛盾逐渐演化为实在的外部危机，集中于Amin身上，影片在他陷于多重困境，奔跑的姿态中戛然而止。——— Parity",
+        image: "https://a.ltrbxd.com/resized/film-poster/5/8/6/5/5/7/586557-mektoub-my-love-canto-due-0-1000-0-1500-crop.jpg?v=4a287f6661",
       },
     ],
   },
@@ -148,7 +74,7 @@ const FestivalRatings = () => {
   return (
     <Layout>
       <PageContainer>
-        <h1 className="text-3xl md:text-4xl mb-8">Festival Ratings</h1>
+        <h1 className="text-3xl md:text-4xl mb-8">Film Festivals</h1>
 
         <div className="flex flex-wrap gap-6 mb-12 pb-6 border-b border-border">
           <FilterSelect label="Festival" value={selectedFestival} options={festivals} onChange={setSelectedFestival} />

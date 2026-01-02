@@ -11,27 +11,17 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: "1",
-    title: "Annual Summary 2024 Published",
+    title: "Annual Top 10 2025 Published",
     date: "December 31, 2024",
-    content: "Our collective's year-end list is now available. Ten films that defined our viewing year, with notes from contributing members.",
+    content:
+      "SOLARIS Annual Top 10 2025 is now published. Readers can explore the collective ranking in the Annual Top 10 section, as well as each editor’s individual Top Ten list.\n\nThis year, we also present a few light-hearted internal distinctions:\nBest Duo — 大马哈鱼 & 欢\nLeast Likely to Talk About Films — 大马哈鱼\nTheir Life, My Dream — Cardinal\nMost Humorous — Young\n\nWe wish all our readers a thoughtful and joyful New Year.",
   },
   {
     id: "2",
-    title: "Venice Coverage Complete",
-    date: "September 12, 2024",
-    content: "All festival ratings and notes from the 81st Venice International Film Festival have been added to the archive.",
-  },
-  {
-    id: "3",
-    title: "New Member Announcement",
-    date: "August 1, 2024",
-    content: "We welcome Member Five to the collective. Their first contributions will appear in the September ratings.",
-  },
-  {
-    id: "4",
-    title: "Site Launch",
-    date: "January 1, 2024",
-    content: "SOLARIS begins. A quiet space for film writing and collective memory.",
+    title: "New Editorial Team Announced",
+    date: "December 17, 2024",
+    content:
+     "In December, the new SOLARIS editorial team was officially formed.\n Editors-in-Chief: Cardinal, LesleyGujiji\n Associate Editors: 欧, 冬客\n\nWe look forward to the coming year as SOLARIS continues to expand internationally, embrace diverse perspectives, and move forward with clarity and confidence."
   },
 ];
 
@@ -48,7 +38,7 @@ const News = () => {
                 {item.date}
               </time>
               <h2 className="text-xl mb-3">{item.title}</h2>
-              <p className="text-foreground/90">{item.content}</p>
+              <p className="whitespace-pre-line text-foreground/90">{item.content}</p>
             </article>
           ))}
         </div>

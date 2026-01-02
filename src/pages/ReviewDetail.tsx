@@ -2,6 +2,10 @@ import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import PageContainer from "@/components/layout/PageContainer";
 
+type ReviewBlock =
+  | { type: "p"; text: string }
+  | { type: "img"; src: string; alt?: string; caption?: string };
+  
 interface ReviewData {
   id: string;
   title: string;
@@ -10,56 +14,93 @@ interface ReviewData {
   year: number;
   author: string;
   date: string;
+  cover?: string;
   content: string[];
 }
 
 const reviewsData: Record<string, ReviewData> = {
-  "brutalist-review": {
-    id: "brutalist-review",
-    title: "The Weight of Form",
-    film: "The Brutalist",
-    director: "Brady Corbet",
-    year: 2024,
-    author: "Member One",
-    date: "December 15, 2024",
+  "yes-review": {
+    id: "yes-review",
+    title: "笔记：同义词",
+    film: "Yes",
+    director: "Nadav Lapid",
+    year: 2025,
+    author: "欧",
+    date: "October 31, 2025",
     content: [
-      "In László Tóth's hands, concrete becomes flesh. Brady Corbet's three-hour epic understands that architecture is never neutral — it carries the weight of its maker's displacement, ambition, and inevitable compromise.",
-      "Adrien Brody disappears into Tóth with an intensity that borders on self-annihilation. This is not the mannered suffering of prestige performance but something rawer: the erosion of a man by his own vision. Guy Pearce, as the patron who enables and destroys in equal measure, gives perhaps his finest work — all surface charm concealing depths of need.",
-      "Corbet shoots in VistaVision, and the format matters. The horizontal expanse mirrors Tóth's brutalist structures: imposing, uncompromising, designed to dwarf the human figures that move through them. When we finally see the completed community center, it's both triumph and tomb.",
-      "The film's three-hour runtime is deliberate, perhaps essential. Immigration, assimilation, artistic compromise — these are processes that cannot be rushed. We feel every year of Tóth's American journey, every small death along the way to his compromised success.",
-      "This is a film about what America does to its dreamers. Not the dream itself, but the machinery that processes it. Tóth arrives with visions of pure form; he leaves having learned that every building, like every immigrant, must negotiate with the earth it stands on.",
+      { type: "p", text: "校对了武汉放映的字幕，然后在武汉的china premiere上第二次看了《是的》。开头进行一个song battle，一边是快节拍的be my lover，另一边是慢节拍的love me tender love me true，都是关于love的音乐，却很有攻击性。第一部分就在这个song battle的节奏中进行，有些适当的改变，比如客厅的那场戏，关系个人和关系集体的意识，一会是愤怒地跳舞，一会是聆听沉默。就像加沙的炮火同时存在于身体内部和周围的环境之中。还有Y在街头看全民服兵役的以色列公民街头健身，而他坐在长椅上抬头透过树叶看太阳。然后他去健身房看Yasmin跳舞，自己躲在房间弹钢琴。拉皮德生猛的影像风格用在了合适的地方，摄影机可以水平旋转，可以竖直翻转，疯狂可以随时插入悲伤，悲伤也可以随时插入疯狂。第一次看的时候，被那些慢下来进行叙述的段落塞满了情绪，第二次看又是在每次发疯、狂躁的地方想落泪，因为每一次发疯都在反刍那些静默的部分，简直要精神分裂。"},
+      { type: "p", text: "第二部分“寻找答案”的动线比较明确以后，这个节奏就被放缓了。Y说“勇敢的是说出Yes而不是No”的时候语气是比较确定的，不过这个二元的、Yes和No的怀疑还是贯穿了始终。开头的song battle选择让参谋长赢就是一次确认，以及Y问刚出生的儿子怎么选，问打印店的店员Yes还是No（答案竟然是amen），经过哨站的士兵，都得到了不同的答案。这些地方问得比较抽象，而和Avinoam在游艇上、和Leah在车上的提问则更加具体，抽象和具体的“问”是互相穿插的。只要一开始行走影片就在对抗撕裂，比如献出舌头的动作，给权力舔脚是yes，激吻是no。可以看到一个绝望的摇摆，好像支持战争的哪一方都在支持恐怖，Yes和No变成了同义词。"},
     ],
   },
-  "flow-review": {
-    id: "flow-review",
-    title: "Without Words",
-    film: "Flow",
-    director: "Gints Zilbalodis",
-    year: 2024,
-    author: "Member Two",
-    date: "December 8, 2024",
+  "two-seasons-two-strangers-review": {
+    id: "two-seasons-two-strangers-review",
+    title: "笔记：陌生的三宅唱，陌生的电影",
+    film: "Two Seasons, Two Strangers",
+    director: "Sho Miyake",
+    year: 2025,
+    author: "欧",
+    date: "October 30, 2025",
     content: [
-      "What remains when language is stripped away? Gints Zilbalodis answers with water, light, and the primal grammar of survival. A cat navigates a flooded world, and we remember what cinema was before dialogue dominated.",
-      "Flow operates on pure visual logic. A house submerged. A boat discovered. A tentative community of survivors formed across species lines. Zilbalodis trusts his images completely, never explaining what the flood means or where it came from. The world simply is, and the cat must move through it.",
-      "The animation style — somewhere between the handcrafted and the digital — serves the story's otherworldly quality. These are not quite realistic animals but creatures of fable, their emotions legible through movement rather than anthropomorphized expression.",
-      "At barely ninety minutes, the film achieves an emotional density that longer, more elaborate works often miss. When the cat finally finds safety, we've earned that arrival. Every obstacle overcome, every bond formed, registers with the weight of lived experience.",
-      "This is animation as meditation. Not the manufactured sentiment of mainstream studios, but something closer to poetry — each frame a careful arrangement of color and light in service of something words would only diminish.",
+      { type: "p", text: "《惠子，凝视》是我2023年最喜欢的电影，而2024年《黎明的一切》又让我觉得这种“小而美”的路线已经走到了尽头。没想到《旅途中的日子》又找到了很多有趣的事物。三宅唱拍摄《惠子，凝视》的惠子，拍摄《你的鸟儿会唱歌》的佐知子，镜头与角色是亲密的。我们看见石桥静河跳舞、看岸井雪乃训练拳击，都是身体性的影像。而《旅途中的日子》就很陌生。就像没有才华的编剧在冬天写作一个夏天的故事，摄影机拍摄孤独的人们如何邂逅。正如河合优实在远景中，面对暴雨拆掉她的绷带，natsuo发现她的绷带消失，他们下海游泳、他们在水中找鱼，他们始终在尝试和对方、和环境互动，摄影机却远离了身体，我们就像电影中参加映后的学生，不知道为什么就看到了孤独。"},
+      { type: "p", text: "执笔写作的特写——我们唯一接近沈的时刻——她写下的却是韩语。“陌生”让所有的自反都很恰当。没有才华的编剧，感受到孤独的观众，喜欢幽默电影的客栈老板所经历的幽默故事，以及为客栈创作的、怀有淡淡的悲伤的电影。我们看到两种行进的方式：上一个场景还在海滩的大广角被游客拍摄的natsuo，沈在纸上用铅笔“使其离开”，下一次出现就在无人的海湾等待。而河合的角色则经过了从展览馆到树林到海湾的整段行走，第一次看到的摄影、沿途的风景以及每一次岔路的选择，第二次在雨中犹豫，决定是否兑现承诺前往海湾，整段行走的时间都被保留。"},
+      { type: "p", text: "就像无法听见其他人说话的惠子让我们听见城市中更丰富、更清晰的声音，《旅途中的日子》故意让一些声音消失，插入不存在的声音，过了一会又恢复正常。比如映后的场景，导演陈述，说到一半声音fade out，沈恩敬开始旁白，难以确定我们的思绪在何处飘散，独白结束之后得以恢复正常。比如火车经过轨道，不知何时，规律的、轮毂与铁轨的撞击声也消失了，Hi'Spec的音乐出现，Li的旅程到达了遥远的目的地。"},
     ],
   },
-  "past-lives-review": {
-    id: "past-lives-review",
-    title: "The Space Between",
-    film: "Past Lives",
-    director: "Celine Song",
-    year: 2023,
-    author: "Member Three",
-    date: "March 22, 2024",
+  "enzo-review": {
+    id: "enzo-review",
+    title: "你的世界。",
+    film: "Enzo",
+    director: "Robin Campillo",
+    year: 2025,
+    author: "Cardinal",
+    date: "September 8, 2025",
     content: [
-      "In-yun is not fate. It's the accumulation of small moments across lifetimes, the weight of might-have-been. Celine Song's debut understands that some distances cannot be crossed, only witnessed.",
-      "The film's structure is deceptively simple: two childhood friends in Seoul, separated by emigration, reunited decades later in New York. What Song does with this premise is extraordinary — she makes the space between people visible, tangible, almost unbearable.",
-      "Greta Lee and Teo Yoo carry the film's central silence with remarkable precision. Their Nora and Hae Sung are not tragic lovers kept apart by circumstance but something more honest: two people who might have been everything to each other, had the world been different. The conditional tense is the film's true subject.",
-      "John Magaro, as Nora's husband Arthur, gives the performance of the year in a role that could easily become invisible. His scene with Hae Sung, two men who love the same woman in different registers, is devastating in its understatement.",
-      "Song shoots New York like a city of ghosts. Every subway platform, every bar, every apartment becomes a threshold between what is and what might have been. When Nora walks Hae Sung to his Uber in the film's final scene, we understand that some goodbyes are not endings but the recognition of an ending that happened long ago.",
+      { type: "p", text: "电影的开始，用几组干净的镜头交待了16岁的男主人公Enzo作为工地学徒，所处的平凡朴素的工作环境。而笨拙并不熟练的工作表现好像已经显示了人物和环境的格格不入。但直到训斥Enzo的师傅因为拜访他父母反应工作问题，和他一同走入那个带有泳池的大房子后，阶级差异的面纱方才以悬念的方式被揭晓，男主人公实际生活在十分富有的家庭。于是随着情节的发展，我们开始知晓Enzo在优渥的家庭环境中和保护欲强的父亲的矛盾，知晓少年的迷茫和想要逃脱的情绪，理解他在此刻逃离“正轨”富人小孩生活轨迹的原因。当Enzo和同事的关系逐渐亲密，那个健硕阳光让人迷恋的乌克兰工人Vlad的出现，让男主人公也同时出现了对未知战争世界的天真妄想，和青春期的性别意识与欲望觉醒的困惑。"},
+      { type: "p", text: "不论是电影项目发起后离世的冈泰，还是接手前者进行创作的坎皮略，都有将主题融入强政治性的创作经历，预计情节是否会朝向更丰富的层级碰撞似乎也是顺理成章的事情。这里Enzo体验的工作圈层和他自身家庭背景两个世界的割裂性，以及其所钦慕的乌克兰工人的身份背后呼应现实的战争，似乎都有足够的文章可作，但电影意外地维持着青春酷儿类型电影最基本的形态，让现实性的逻辑都以最轻薄的重量悄悄带过。哪怕当Vlad亲自送走Enzo到他家楼下时，透过透明的玻璃窗窥见和他完全不同的富有生活时，没有任何妒忌的扭曲，也没有任何危险的闯入，就这样维持着简单与纯真，没有任何打破或是撕裂两种空间的企图。唯一能够刺痛现实的表达，只是最后在意大利断壁残垣的景区所连通的乌克兰战地的，【call me by your name】那般苦涩的电话。情感的距离和生活的距离缠绵出的悲痛，交替放大又戛然而止。但很难说这不算是一种残忍，仿佛世界的差异与层次实际没有任何弥合的可能，在青春的伤痛文学中折射出两者之间坚固的围墙。"},
+      { type: "p", text: "而提到和【call me by your name】的相似性，前者从未呈现某些全新的，酷儿电影之前不曾表达过的东西，但的确聪明得把握住几个关键的剧情要素：选择更具差异性的两方角色，而在呈现双人关系时聚焦着其中一方的情感表达与成长，以及终将失去并定格在记忆中的一段苦乐参半的情感时光。这样的设定如同直接构建了以Elio为中心的，足以凌驾在现实至上的青春幻梦土壤，为观众对于这种美丽幻想产生强烈代入提供可能。【Enzo】很直接的模仿了这些要素，但也在此基础上进行了独特的变体。不同于Elio隔靴搔痒的桃子探索，或是没来由的呕吐，在这部电影里我们看到的时Enzo对Vlad产生迷恋的情愫后更激烈、疯狂、乃至暴力的身体表达：直白的示爱、直接的触探、情急的拥抱与搏斗、失控地在家庭派对掏出假枪，和盘托出的出柜，以及最突如其来，在得知Vlad要回到乌克兰后的自我坠楼。这些都足以引起观众的更强烈的情感翻涌。但更与前者相反的时，Enzo的一切行为都如同左灯右行后的不断碰壁。与Vlad短暂的相处关系，甚至无法被称之为一段“幻梦般的爱情时光”，性向的隔阂没有被丝毫撬动的痕迹。而企图走进的成人生活，就像被Vlad带去蹦迪的那个夜晚，被门卫直接的因为年龄问题没有证件拦了下来，我们看不到音乐下暗潮涌动的青春舞蹈，只有孤独的走入悬崖和星空的背影。所有冲动与决绝的行为所对应的，好像是完全单方面的不存在任何实质价值的东西，没有“永恒夏日”的记忆，只有刺痛。"},
+      { type: "p", text: "我会想到和这部电影有如此强烈的情感链接，或许不只是喜欢那些反复上演的，直男的男性气质的迷恋与求而不得，而是【Enzo】用一根线，将这样的扭曲情感和人物对现实逃亡的渴求连接起来。所处于这样的时代中，我永远不可能感同身受地体会到远方混乱的生活，和Enzo的想象或许没有不同。但这种来自远方的残酷与破碎同样催发了我现实的破碎，从而驱使着想要毁掉一切的崩溃和死亡的假想，而这样的痛苦又连接着自我的酷儿身份，形成同样持续不断的追求直男的徒劳式行为，只是“坠地”的时机尚未可知。"},
+      { type: "p", text: "简单、美妙、残忍，当梳理完对电影的感受后又回想到了最后的电话，简单的问候伴随着恐惧般的喘息声，仿佛在地狱的另一端所传来的永远的告别那样，两个世界在此建立起最后的温情，就像一同砌过的砖瓦曾是唯一真实且无法抹去的东西。你的世界，我的世界，即使亲近掺杂着现实的讽刺，我也曾想真正踏入。"},
+      { type: "img", src: "/reviews/enzo.png", alt: "Enzo Movie Still" },
+      { type: "p", text: "这种男人摆在面前应该没人不悸动。。"},
+    ],
+  },
+  "eat-the-night-review": {
+    id: "eat-the-night-review",
+    title: "世界的终结，青春的终结",
+    film: "Eat the Night",
+    director: "Caroline Poggi & Jonathan Vinel",
+    year: 2024,
+    author: "迷宫中的站起来",
+    date: "November 26, 2024",
+    content: [
+      { type: "img", src: "/reviews/eatthenight.png", alt: "Enzo Movie Still" },
+      { type: "p", text: "记得很早以前刚开始看电影的时候，总是很羡慕那些欧洲电影里浪漫的青春期生活，去海边度假、散步邂逅，在课堂上自由发言、激情辩论，参加派对、尝试做很多刺激的事，仿佛没有物质世界的烦恼，即便有时存在情感上的困扰，所需要解决的问题也只关乎自我，总之是令人感到羡慕的生活状态。随着互联网的加速发展，多元的社交媒体使全世界的交往结构走向泛化，大众媒介更是赋予我们一双洞悉世界的眼睛，我们和世界另一端的TA们以及TA们的生活似乎不再那么遥远了，我也渐渐明白，欧洲的青少年并不如我所想象的那样无忧无虑。在各种各样的媒介中，网络游戏或许是最特别的一种，它既有显著的交互性（开放世界、无边际的社交），也可以具有相对的封闭性（作为远离现实的避风港、与现实社交的切割）。作为一部以呈现青春期生活为主的电影，《吞噬暗夜》尝试从情感的角度探讨游戏世界与现实生活的关系，它和我们想象中的那些充满浪漫的欧洲青春电影有些不同，很多时候，向观众展现的反而是十分内敛的情绪。"},
+      { type: "p", text: "电影的情节很简单，Pablo和Apo是游戏Darknoon的忠实玩家，现实生活中，他们是情感紧密的兄妹，游戏世界里，他们是并肩作战的挚友。Darknoon即将停服的消息犹如晴天霹雳般，让兄妹俩的生活忽然陷入一片慌乱。Pablo在现实生活中从事制毒、贩毒的工作，时常处于冲突边缘，也因此意外结识了Night，一个随后与Pablo发展成为恋人的男人。Pablo将Night带入自己的世界，教他如何制毒、与他共享自己的秘密据点，与此同时，也影响了Pablo和Apo原本亲密的兄妹关系。"},
+      { type: "p", text: "在以Pablo入狱为分界线的电影前半部分，Pablo是绝对的主角，我们的目光总是会被飞驰在公路上的绿色摩托所吸引，那是Pablo的标志，它在Pablo入狱后被吊车带走、报废。而由Pablo所主导的场景，是他充满危险的日常活动：暴力冲突、违法交易，以及与Night冲动的爱情——在被妹妹Apo目睹二人性交后，这场爱情也被赋予了禁忌性。但三人关系并没有随之发展出嫉妒与敌对，而是通过Night进入Apo的房间，进入一个墙上布满了手绘、电脑里时刻亮着Darknoon游戏界面的房间，进入一个代表着少女私域的房间之后，几句简单的对话，开始了Apo对Night的接纳。"},
+      { type: "p", text: "我们对Pablo和Apo的原生家庭知之甚少，唯一确认的是Pablo和Apo之间超越一般兄妹关系的亲密，例如Apo可以一眼认出Pablo在夹克里穿了新的衬衫，Pablo和Night在一起鬼混时，Apo会“吃醋“，并在游戏中发泄怨气。但Apo终究还是个孩子，收到哥哥送的礼物后欣喜溢于言表，转而在纸上描摹下哥哥与恋人接吻的画像，内心里已默默接受哥哥的爱人。"},
+      { type: "p", text: "如果说电影的前半部分，仍然是相对常规地展示现实场景而游戏世界仅仅以平面化的桌面出现，那么自Pablo被捕入狱后的电影后半部分，现实世界的人物开始以一种拟真的形态渗入游戏世界，人物将现实情感带入游戏世界，以一种迟缓的、忧伤的语调铺展开。Pablo入狱后，Night承接了照顾Apo的义务。现实世界里，Apo因为Pablo的入狱而对Night有怨念，Night只能以另一种方式靠近她，即进入游戏世界，伪装为陌生人的身份完成对Apo的陪伴，来弥补Pablo缺席的爱。Night成为了Pablo的“替代品“，并以自己在游戏世界的主体性来完善Apo的人格。"},
+      { type: "p", text: "在Apo带着由Night扮演的新玩家Narou以老玩家教学为目的开展的狩猎场景，两人在草丛里安静地交谈，环境中嗖嗖作响的风吹草动复刻了现实，而他们的面孔也融合了现实世界的自己。Narou向Apo分享自己最喜爱的歌，而后我们在现实世界中听到Night在电脑的另一端播放它，两个世界就这样轻盈地交织着。"},
+      { type: "p", text: "随着Apo与Narou在游戏中交互的推进，现实世界里，Apo也重新和Night建立起信赖的关系。她为他作画，将他画成游戏人物般的战士，而Night拿过画后，脑海里却迅速涌动Pablo的画面，以及他们在一起的点滴。在这里，两人以一种默许的方式，共享、凝练了对Pablo的情感。"},
+      { type: "p", text: "严格来说，《吞噬暗夜》并没有在现实、虚拟的辩证关系中做太多的文章，它所做的是仅仅是朴素地将现实投射进虚拟世界，用拟合了现实人物形象的方式呈现虚拟，重点仍然在于作为维系人物纽带的情感是如何在两个世界里来回流动。电影的末尾，屏幕内已经关闭了服务器的游戏世界，死掉的躯体如大雨倾盆落下。屏幕外，作为多年玩家的兄妹二人以满面的泪水哀悼世界的终结，哀悼他们远逝的青春。"},
+    ],
+  },
+  "man-and-cow-review": {
+    id: "man-and-cow-review",
+    title: "人与牛。",
+    film: "Afternoons of Solitude",
+    director: "Albert Serra",
+    year: 2024,
+    author: "Cardinal",
+    date: "November 24, 2024",
+    content: [
+      { type: "img", src: "/reviews/manandcow.png", alt: "Man and Cow Movie Still" },
+      { type: "p", text: "开场，一组黑夜里对公牛的特写镜头似乎带来作者立场的引导：在以斗牛士为被摄对象的纪录电影中对动物的关照。因此顺利成章地带来了如阿诺德《奶牛》般的预期，短暂的，去人类中心化的视角。随后影片开始进入主人公 Andrés Roca Rey 作为斗牛士的日常：换装，祈祷，斗牛，杀牛，在欢呼声中离去，同其他斗牛士和助理在驱车来回路途中的谈话，并进行着重复与循环。"},
+      { type: "p", text: "在第一次的日常“循环”中便能发现塞拉对纪录片的拍摄思路实际上是接近于剧情片的。由于摄影机机位的选择以及大量局部和特写镜头，多余的信息已被剔除，我们无从得知斗牛活动的任何历史与背景，也无法了解 Andrés 身份与行为背后更多的态度与想法。但具体场景的组接与设计有着纯粹的诗意的美感。通勤的过程中，固定镜头对准主人公的面庞，只留下狭小的车内空间，而屏蔽外界的环境信息，留下嘈杂的环境音（包括车外观众或者记者的欢呼声）。不论在柯南伯格的《大都会》中，还是在卡拉克斯的《神圣车行》中，“车”的意象都如同抵达虚构边界处的安全的异次空间，人物在此短暂的逃离现实，成为“表演”生成的间隙。在《孤寂午后》所描绘的毫无间歇的斗牛日常中，斗牛士也在进行着一种“扮演”：换上华丽的服饰，手拿红布走入“战场”，以公牛骄傲的姿态投入热情和杀意，战斗不歇。那么‘’车‘’的内部便成为唯一被展示的休憩空间，成为日常最珍贵的间隙：斗牛士们在此卸下装备与神态，在为数不多的交流中回馈战斗的感受。"},
+      { type: "p", text: "当然，在职业日常的编排中，绝大多数笔墨都理所应当的落在对斗牛这一表演的过程记录上。从第一次观赏完整的“赛况转播”中，所能感受到的更多是血淋淋的残酷，甚至于对生活经验与认知相悖的质疑。在战斗开始前公牛便身负重伤渗出鲜血，而当斗牛士胜利的将剑插入牛的躯体时，摄影机残酷的捕捉了牛倒下的呜呼神态，以至于观众无法从中感受到任何战斗的乐趣，只是在毫无意义的仪式中见证某一物种死亡的痛苦。与此同时，尽管镜头完全聚焦于场内搏斗，时而用更低的机位观察步伐，时而对准人与牛的姿态和面庞，试图形成一种动态的优美，并隔绝“观众‘’（指影片中观看斗牛的观众）的任何反应。但这并没有真正促成防止立场干扰的屏蔽层，由于声音的留存，我们不断听到“观众”的喝彩声：\"so brave, so elegant!\" 在这样一种环境的营造下反而将被遮蔽的“观众”的面庞，以更清晰的态度提纯：所有人都在为无意义的屠戮表演鼓舞，而没有人感到悲悯。这也就返回到先前提到的背离经验的质疑，为何在动物保护被不断强调的欧洲，仍然存在着斗牛的表演，而表演的背后又是如此残忍与血腥的样貌？"},
+      { type: "p", text: "根据过往的观影经验，在震撼的第一幕（如果以剧情片的思路来说）过后，便开始期待影片后续的发展，导演是否会捕捉更多的素材，从而展示哪怕一点更多的立场。在塞拉两年前的杰作《岛屿上的煎熬》中，作者先是构建了一个环境，然后通过细微的发展投射着观点和立场。影片有着明显的向前的动势，并积攒成超验的情绪翻涌。《孤寂午后》所展示的激昂虽然寡言，但绝非以往作品的凝滞与迟缓，也因此会让人误以为和《岛屿……》的相性。但影片却仅是走入了日常的循环，在大致观看的三到四场斗牛表演后停在了 Andrés 离场的神态中，为数不多的配乐在此奏响，含混着凄凉与诡谲，又或者是人物背后的孤寂。好像，电影所完成的只是纯粹的关于“运动”的展示，与“事实”的展示，而最后所导向的，一点“情绪”的展示，并无其他。但回想一下，在后续的场景中又的确有着细节上的补充，便突然理解了作者的姿态与动机似乎和观众一样，只是处于好奇的纯粹的探索，一种放弃追溯原因只是梳理过程，并从中获取最直接感知的探索。所以，在中途的某个 Andrés 的换装环节中，强烈的男凝的色情暗示呼之欲出，表面上在完成对严肃的消解，但何尝不是一种观察的趣味：勇士的形象与着装混杂了两性的性别气质，从而生成了更独特的魅力。诚然这种观察并不会破坏整体的影片节奏所产生的优雅弧度。此外，Andrés 每次上场前的简单祈祷，很容易被理解为在斗牛这一具有生命危险的高危活动下的对平安的祈求。但在随后的某一次祈求中镜头最后停留在了床头柜上圣母（或者是某个宗教人物）的相框里，突然又增加了一丝神性的意味。在这般的探索过程中，作者虽然不给出明确的立场，却在抛出的无限的可能性中，逐渐丰富复杂的观感。"},
+      { type: "p", text: "或者更值得注意的是——“血迹”。Andrés 一共遭遇了两次“生命危险”：被牛顶翻，遭受了牛的踩踏，然后在他人的帮助下脱离，并携伤继续完成战斗。在两次不同程度的事故中也留下了不同程度严重的伤口，并且都能清晰的看到此刻人如同牛一般，双手与头颅都被血液浸满。但当表演结束，迅速切回到车内时，那些血迹早已被清理，也很难以身体的疤痕而再现，如同时间线被人为拼接一般，似乎所谓的创伤并没有“战场”中那般惨烈。所以血迹的来源是怎样？究竟是被牛顶伤的伤口，还是刮蹭中所染上的牛的血液，又或者只是一种仪式般的，对红色迷恋性的延伸。但这都在下一场表演前被全数抹平，如同一切都没发生一般，回到高昂的姿态。"},
+      { type: "p", text: "那么再回到对斗牛场本身的感受，第一幕的赤裸过后，观众的态度似乎也随同作者的探索发生改变，尽管每一次公牛的死亡都是被同样的陈列，但因为搏斗本身具有的竞技的勇敢与精彩也被公平的展出，很难不再其中感受到割裂的情绪。在此刻，我所能感受到的是短暂的，仿佛人与牛之间是被平视的时刻，在力与美的决斗中无法终止直至死亡。但又真的如同这般理想吗？显然不是。活动本身难道不能从一开始被终止吗？—— 纯粹的展示为我们带来留白。而竞技规则本身又是否建立在公平的前提？—— 物种之间（包括人）的关系又何曾有过平等。甚至危险本身都存在着虚伪 —— 被牛顶翻的人会随时得到其他人的支援而随时暂停这一生命游戏，表演的谢幕将永远是牛的倒下，伤疤只是人类炫耀自身强大的加冕。那么摄影机的位置又是怎样？作为隐藏的观看者，在安全的位置不断凝视着所发生的一切，却不会涉入任何危险当中。"},
+      { type: "p", text: "至此，我似乎在对导演立场的期待中也产生了对自身虚伪性的质疑。如果电影所展示的日常在壮烈的第一场后戛然而止，又或者在漫长的三个小时中不断展示，我的想法又是怎样？而摄影机如果并没有以狡黠的看似平等的视角里重播动物的死亡，而是保持像球赛转播时的调度般一样将镜头拉远，我的态度又是如何？我在对从导演之口中期待所想要的正义时，是不是该真正面对的是，这种“暴力”的存在之实早已刻进人类的历史并还会延续至未来。然而这似乎才是电影真正迷人的地方，不论作者与观众出于怎样的视角去“观赏”，都在凝视中完成着对自身傲慢的直面。"},
     ],
   },
 };
@@ -103,9 +144,28 @@ const ReviewDetail = () => {
           </header>
           
           <div className="space-y-6 text-foreground/90">
-            {review.content.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          {review.content.map((block, index) => {
+            if (block.type === "img") {
+              return (
+                <figure key={index} className="my-10">
+                  <img
+                    src={block.src}
+                    alt={block.alt ?? ""}
+                    className="w-full grayscale"
+                    loading="lazy"
+                  />
+                  {block.caption && (
+                    <figcaption className="mt-3 text-sm text-foreground/60 tracking-wide">
+                      {block.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+            }
+
+            return <p key={index}>{block.text}</p>;
+          })}
+
           </div>
         </article>
       </PageContainer>
