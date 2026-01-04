@@ -70,7 +70,7 @@ const monthlyData: MonthData[] = [
         director: "Claude Chabrol",
         year: 1970,
         rating: "TBA",
-        note: "",
+        note: "A Claude Chabrol film screening and discussion examining auteur cinema and genre film within the French New Wave.",
         image: "https://a.ltrbxd.com/resized/film-poster/5/0/0/1/3/50013-the-butcher-0-2000-0-3000-crop.jpg?v=50c410b3b1",
       },
     ],
