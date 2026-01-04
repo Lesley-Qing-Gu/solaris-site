@@ -26,6 +26,14 @@ const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "Duse",
+        director: "Pietro Marcello",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/4/2/4/0/1174240-duse-0-2000-0-3000-crop.jpg?v=8daf9236bd",
+      },
+      {
         film: "100 METERS",
         director: "Kenji Iwaisawa",
         year: 2025,
