@@ -81,6 +81,14 @@ const monthlyData: MonthData[] = [
     year: 2025,
     ratings: [
       {
+        film: "All I Had Was Nothingness",
+        director: "Guillaume Ribot",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/2/9/8/8/4/5/1298845-all-i-had-was-nothingness-0-2000-0-3000-crop.jpg?v=bb8bc08739",
+      },
+      {
         film: "Castration Movie Anthology i. Traps",
         director: "Louise Weard",
         year: 2024,
