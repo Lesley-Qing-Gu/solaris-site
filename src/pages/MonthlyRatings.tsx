@@ -21,10 +21,41 @@ interface MonthData {
 
 const monthlyData: MonthData[] = [
   {
+    month: "February",
+    monthNum: 2,
+    year: 2026,
+    ratings: [
+      {
+        film: "Pillion",
+        director: "Harry Lighton",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/3/3/1170433-pillion-2025-0-2000-0-3000-crop.jpg?v=680a4585fe",
+      },
+      {
+        film: "Marty Supreme",
+        director: "Josh Safdie",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-2000-0-3000-crop.jpg?v=b14a26bb43",
+      },
+    ],
+  },
+  {
     month: "January",
     monthNum: 1,
     year: 2026,
     ratings: [
+      {
+        film: "Put Your Soul on Your Hand and Walk",
+        director: "Sepideh Farsi",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/3/4/2/5/6/8/1342568-put-your-soul-on-your-hand-and-walk-0-2000-0-3000-crop.jpg?v=b570ad48f3",
+      },
       {
         film: "Peter Hujar’s Day",
         director: "Ira Sachs",
