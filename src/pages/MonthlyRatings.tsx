@@ -41,6 +41,14 @@ const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "Sons of the Neon Night",
+        director: "Juno Mak",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/4/0/9/7/9/1/409791-sons-of-the-neon-night-0-460-0-690-crop.jpg?v=59b66f4059",
+      },
+      {
         film: "La Grazia",
         director: "Paolo Sorrentino",
         year: 2025,
