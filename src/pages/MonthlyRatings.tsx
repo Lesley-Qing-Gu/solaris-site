@@ -41,12 +41,20 @@ const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
-        film: "Sons of the Neon Night",
-        director: "Juno Mak",
+        film: "Copper",
+        director: "Nicolás Pereda",
         year: 2025,
         rating: "TBA",
         note: "",
-        image: "https://a.ltrbxd.com/resized/film-poster/4/0/9/7/9/1/409791-sons-of-the-neon-night-0-460-0-690-crop.jpg?v=59b66f4059",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/3/6/9/7/5/4/1369754-copper-2025-0-460-0-690-crop.jpg?v=a172bc408b",
+      },
+      {
+        film: "Heads or Tails?",
+        director: "Matteo Zoppis",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/9/7/2/6/0/9/972609-heads-or-tails-2025-0-460-0-690-crop.jpg?v=e22c78c5f2",
       },
       {
         film: "La Grazia",
