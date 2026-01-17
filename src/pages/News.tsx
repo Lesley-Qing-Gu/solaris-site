@@ -6,20 +6,36 @@ interface NewsItem {
   title: string;
   date: string;
   content: string;
+  link?: {
+    label: string;
+    url: string;
+  };
 }
+
 
 const newsItems: NewsItem[] = [
   {
     id: "1",
+    title: "Instagram account is now live!",
+    date: "January 16, 2026",
+    content:
+      "We’re excited to announce that our Instagram account is now live 🎉 \n\nStarting this week, we’ll be sharing weekly updates curated for Chinese cinephiles, including: \nKey film news and festival highlights,\nShort reviews and first impressions of new and classic films,\nOngoing conversations around cinema, authorship, and contemporary film culture.\n\nFollow us on Instagram and join us in exploring what matters most to Chinese film lovers today:",
+    link: {
+      label: "@solariscinema2026",
+      url: "https://www.instagram.com/solariscinema2026/",
+    },
+  },
+  {
+    id: "2",
     title: "Annual Top 10 2025 Published",
-    date: "December 31, 2024",
+    date: "December 31, 2025",
     content:
       "SOLARIS Annual Top 10 2025 is now published. Readers can explore the collective ranking in the Annual Top 10 section, as well as each editor’s individual Top Ten list.\n\nThis year, we also present a few light-hearted internal distinctions:\nBest Duo — 大马哈鱼 & 欢\nLeast Likely to Talk About Films — 大马哈鱼\nTheir Life, My Dream — Cardinal\nMost Humorous — Young\n\nWe wish all our readers a thoughtful and joyful New Year.",
   },
   {
-    id: "2",
+    id: "3",
     title: "New Editorial Team Announced",
-    date: "December 17, 2024",
+    date: "December 17, 2025",
     content:
      "In December, the new SOLARIS editorial team was officially formed.\n Editors-in-Chief: Cardinal, LesleyGujiji\n Associate Editors: 欧, 冬客\n\nWe look forward to the coming year as SOLARIS continues to expand internationally, embrace diverse perspectives, and move forward with clarity and confidence."
   },
@@ -38,7 +54,21 @@ const News = () => {
                 {item.date}
               </time>
               <h2 className="text-xl mb-3">{item.title}</h2>
-              <p className="whitespace-pre-line text-foreground/90">{item.content}</p>
+              <p className="whitespace-pre-line text-foreground/90">
+                {item.content}
+              </p>
+
+              {item.link && (
+                <a
+                  href={item.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 underline text-foreground hover:text-muted-foreground transition"
+                >
+                  {item.link.label}
+                </a>
+              )}
+
             </article>
           ))}
         </div>
