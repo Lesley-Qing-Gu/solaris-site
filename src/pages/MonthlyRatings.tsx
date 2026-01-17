@@ -41,6 +41,14 @@ const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "The Secret Agent",
+        director: "Kleber Mendonça Filho",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/0/4/3/4/8/1104348-the-secret-agent-2025-0-460-0-690-crop.jpg?v=3bcd2a3e02",
+      },
+      {
         film: "Copper",
         director: "Nicolás Pereda",
         year: 2025,
