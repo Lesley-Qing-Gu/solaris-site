@@ -2,6 +2,12 @@ import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
 import PageContainer from "@/components/layout/PageContainer";
 import FilterSelect from "@/components/ui/FilterSelect";
+import { solarisRatings } from "@/data/solarisRatings";
+
+console.log(
+  "SOLARIS KEYS AT RUNTIME:",
+  Object.keys(solarisRatings)
+);
 
 interface Rating {
   film: string;
@@ -18,6 +24,15 @@ interface MonthData {
   year: number;
   ratings: Rating[];
 }
+
+const normalizeTitle = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[’‘]/g, "'")
+    .replace(/[–—]/g, "-")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
 
 const monthlyData: MonthData[] = [
   {
@@ -44,7 +59,7 @@ const monthlyData: MonthData[] = [
         film: "Kokuho",
         director: "Sang-il Lee",
         year: 2025,
-        rating: "2.0",
+        rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/6/5/6/5/8/1265658-kokuho-0-460-0-690-crop.jpg?v=662ff79da5",
       },
@@ -52,7 +67,7 @@ const monthlyData: MonthData[] = [
         film: "Cosmic Princess Kaguya!",
         director: "Shingo Yamashita",
         year: 2026,
-        rating: "4.0",
+        rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/4/4/7/3/3/5/1447335-cosmic-princess-kaguya-0-460-0-690-crop.jpg?v=b567cda7f7",
       },
@@ -60,7 +75,7 @@ const monthlyData: MonthData[] = [
         film: "Sons of the Neon Night",
         director: "Juno Mak",
         year: 2025,
-        rating: "2.85",
+        rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/4/0/9/7/9/1/409791-sons-of-the-neon-night-0-460-0-690-crop.jpg?v=59b66f4059",
       },
@@ -68,7 +83,7 @@ const monthlyData: MonthData[] = [
         film: "The Voice of Hind Rajab",
         director: "Kaouther Ben Hania",
         year: 2025,
-        rating: "2.38",
+        rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/3/5/7/4/0/2/1357402-the-voice-of-hind-rajab-0-460-0-690-crop.jpg?v=c5d8abe27e",
       },
@@ -204,7 +219,7 @@ const monthlyData: MonthData[] = [
         film: "Castration Movie Anthology i. Traps",
         director: "Louise Weard",
         year: 2024,
-        rating: "5.0",
+        rating: "TBA",
         note: "Andy Warhol in the new century. —— Ada的B计划",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/2/6/5/0/5/1126505-castration-movie-anthology-i-traps-0-1000-0-1500-crop.jpg?v=6b336b747a",
       },
@@ -283,7 +298,7 @@ const monthlyData: MonthData[] = [
         film: "All I Had Was Nothingness",
         director: "Guillaume Ribot",
         year: 2025,
-        rating: "TBA",
+        rating: "4.00",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/9/8/8/4/5/1298845-all-i-had-was-nothingness-0-2000-0-3000-crop.jpg?v=bb8bc08739",
       },
@@ -333,6 +348,20 @@ const MonthlyRatings = () => {
       return yearMatch && monthMatch;
     });
   }, [selectedYear, selectedMonth]);
+
+  const applySolarisRating = (r: Rating): Rating => {
+    const solarisScore = solarisRatings[normalizeTitle(r.film)];
+
+    // 没有 Solaris 分数 → 原样返回
+    if (!solarisScore) return r;
+
+    // 只替换 TBA（安全）
+    if (r.rating === "TBA") {
+      return { ...r, rating: solarisScore };
+    }
+
+    return r;
+  };
 
   const sortRatings = (ratings: Rating[]) => {
     if (sortMode === "none") return ratings;
@@ -434,8 +463,9 @@ const MonthlyRatings = () => {
                 </div>
 
                 <div className="space-y-8">
-                  {sortRatings(month.ratings).map(
-                    (rating, ratingIndex) => (
+                  {sortRatings(
+                    month.ratings.map(applySolarisRating)
+                  ).map((rating, ratingIndex) => (
                       <div
                         key={ratingIndex}
                         className="grid md:grid-cols-[80px_1fr_auto] gap-4 items-start"
