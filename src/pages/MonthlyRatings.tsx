@@ -283,10 +283,17 @@ const monthlyData: MonthData[] = [
   },
 ];
 
+type SortMode = "none" | "title" | "rating" | "director" | "year";
+
 const MonthlyRatings = () => {
   const years = useMemo(() => {
-    const uniqueYears = [...new Set(monthlyData.map((m) => m.year))].sort((a, b) => b - a);
-    return [{ value: "all", label: "All Years" }, ...uniqueYears.map((y) => ({ value: String(y), label: String(y) }))];
+    const uniqueYears = [...new Set(monthlyData.map((m) => m.year))].sort(
+      (a, b) => b - a
+    );
+    return [
+      { value: "all", label: "All Years" },
+      ...uniqueYears.map((y) => ({ value: String(y), label: String(y) })),
+    ];
   }, []);
 
   const months = [
@@ -307,55 +314,146 @@ const MonthlyRatings = () => {
 
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [sortMode, setSortMode] = useState<SortMode>("none");
 
   const filteredData = useMemo(() => {
     return monthlyData.filter((m) => {
-      const yearMatch = selectedYear === "all" || m.year === Number(selectedYear);
-      const monthMatch = selectedMonth === "all" || m.monthNum === Number(selectedMonth);
+      const yearMatch =
+        selectedYear === "all" || m.year === Number(selectedYear);
+      const monthMatch =
+        selectedMonth === "all" || m.monthNum === Number(selectedMonth);
       return yearMatch && monthMatch;
     });
   }, [selectedYear, selectedMonth]);
 
+  const sortRatings = (ratings: Rating[]) => {
+    if (sortMode === "none") return ratings;
+
+    const copied = [...ratings];
+
+    switch (sortMode) {
+      case "title":
+        return copied.sort((a, b) =>
+          a.film.localeCompare(b.film, "en", { sensitivity: "base" })
+        );
+
+      case "director":
+        return copied.sort((a, b) =>
+          a.director.localeCompare(b.director, "en", {
+            sensitivity: "base",
+          })
+        );
+
+      case "year":
+        return copied.sort((a, b) => b.year - a.year);
+
+      case "rating":
+        return copied.sort((a, b) => {
+          const ra = a.rating === "TBA" ? -1 : Number(a.rating);
+          const rb = b.rating === "TBA" ? -1 : Number(b.rating);
+          return rb - ra;
+        });
+
+      default:
+        return copied;
+    }
+  };
+
   return (
     <Layout>
       <PageContainer>
-        <h1 className="text-3xl md:text-4xl mb-8">Monthly Ratings</h1>
+        <h1 className="text-3xl md:text-4xl mb-8">
+          Monthly Ratings
+        </h1>
 
         <div className="flex flex-wrap gap-6 mb-12 pb-6 border-b border-border">
-          <FilterSelect label="Year" value={selectedYear} options={years} onChange={setSelectedYear} />
-          <FilterSelect label="Month" value={selectedMonth} options={months} onChange={setSelectedMonth} />
+          <FilterSelect
+            label="Year"
+            value={selectedYear}
+            options={years}
+            onChange={setSelectedYear}
+          />
+          <FilterSelect
+            label="Month"
+            value={selectedMonth}
+            options={months}
+            onChange={setSelectedMonth}
+          />
         </div>
 
         {filteredData.length === 0 ? (
-          <p className="text-muted-foreground">No ratings found for this selection.</p>
+          <p className="text-muted-foreground">
+            No ratings found for this selection.
+          </p>
         ) : (
           <div className="space-y-16">
             {filteredData.map((month, monthIndex) => (
               <section key={monthIndex}>
-                <h2 className="text-xl mb-6 pb-2 border-b border-border">
-                  {month.month} {month.year}
-                </h2>
+                <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
+                  <h2 className="text-xl">
+                    {month.month} {month.year}
+                  </h2>
+
+                  <div className="flex gap-3 text-sm text-muted-foreground">
+                    <SortText
+                      active={sortMode === "rating"}
+                      onClick={() => setSortMode("rating")}
+                    >
+                      Rating
+                    </SortText>
+
+                    <SortText
+                      active={sortMode === "title"}
+                      onClick={() => setSortMode("title")}
+                    >
+                      Title
+                    </SortText>
+
+                    <SortText
+                      active={sortMode === "director"}
+                      onClick={() => setSortMode("director")}
+                    >
+                      Director
+                    </SortText>
+
+                    <SortText
+                      active={sortMode === "year"}
+                      onClick={() => setSortMode("year")}
+                    >
+                      Year
+                    </SortText>
+                  </div>
+                </div>
 
                 <div className="space-y-8">
-                  {month.ratings.map((rating, ratingIndex) => (
-                    <div key={ratingIndex} className="grid md:grid-cols-[80px_1fr_auto] gap-4 items-start">
-                      <img
-                        src={rating.image}
-                        alt={rating.film}
-                        className="w-20 h-28 object-cover grayscale"
-                      />
-                      <div>
-                        <h3 className="text-lg">
-                          {rating.film}{" "}
-                          <span className="text-muted-foreground">
-                            ({rating.director}, {rating.year})
-                          </span>
-                        </h3>
-                        <p className="text-muted-foreground mt-1">{rating.note}</p>
+                  {sortRatings(month.ratings).map(
+                    (rating, ratingIndex) => (
+                      <div
+                        key={ratingIndex}
+                        className="grid md:grid-cols-[80px_1fr_auto] gap-4 items-start"
+                      >
+                        <img
+                          src={rating.image}
+                          alt={rating.film}
+                          className="w-20 h-28 object-cover grayscale"
+                        />
+                        <div>
+                          <h3 className="text-lg">
+                            {rating.film}{" "}
+                            <span className="text-muted-foreground">
+                              ({rating.director}, {rating.year})
+                            </span>
+                          </h3>
+                          <p className="text-muted-foreground mt-1">
+                            {rating.note}
+                          </p>
+                        </div>
+                        <div className="text-lg md:text-right nav-text font-medium">
+                          {rating.rating}
+                        </div>
                       </div>
-                      <div className="text-lg md:text-right nav-text font-medium">{rating.rating}</div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               </section>
             ))}
@@ -363,6 +461,28 @@ const MonthlyRatings = () => {
         )}
       </PageContainer>
     </Layout>
+  );
+};
+
+interface SortTextProps {
+  children: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+}
+
+const SortText = ({ children, active, onClick }: SortTextProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`font-sans text-sm font-normal transition
+        ${
+          active
+            ? "text-white"
+            : "text-muted-foreground hover:text-white"
+        }`}
+    >
+      {children}
+    </button>
   );
 };
 
