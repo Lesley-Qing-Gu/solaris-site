@@ -22,7 +22,7 @@ interface RatingWithMonth extends Rating {
   yearGroup: number;
 }
 
-type SortMode = "rating" | "title" | "director" | "year";
+type SortMode = "none" | "rating" | "title" | "director" | "year";
 
 /* ---------- constants ---------- */
 
@@ -41,7 +41,7 @@ const normalizeTitle = (s: string) =>
 const MonthlyRatings = () => {
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
-  const [sortMode, setSortMode] = useState<SortMode>("rating");
+  const [sortMode, setSortMode] = useState<SortMode>("none");
   const [page, setPage] = useState(1);
 
   /* ---------- filter options ---------- */
@@ -103,32 +103,44 @@ const MonthlyRatings = () => {
   };
 
   const sortRatings = (ratings: RatingWithMonth[]) => {
+    // ⭐ none = 数据库顺序（不 sort）
+    if (sortMode === "none") {
+      return ratings;
+    }
+
     const copied = [...ratings];
 
-    switch (sortMode) {
-      case "title":
-        return copied.sort((a, b) =>
-          a.film.localeCompare(b.film, "en", { sensitivity: "base" })
-        );
+    return copied.sort((a, b) => {
+      // ① 年月主干（新 → 旧）
+      if (a.yearGroup !== b.yearGroup) {
+        return b.yearGroup - a.yearGroup;
+      }
 
-      case "director":
-        return copied.sort((a, b) =>
-          a.director.localeCompare(b.director, "en", {
+      if (a.monthNum !== b.monthNum) {
+        return b.monthNum - a.monthNum;
+      }
+
+      // ② 同月内排序
+      switch (sortMode) {
+        case "title":
+          return a.film.localeCompare(b.film, "en", { sensitivity: "base" });
+
+        case "director":
+          return a.director.localeCompare(b.director, "en", {
             sensitivity: "base",
-          })
-        );
+          });
 
-      case "year":
-        return copied.sort((a, b) => b.year - a.year);
+        case "year":
+          return b.year - a.year;
 
-      case "rating":
-      default:
-        return copied.sort((a, b) => {
+        case "rating":
+        default: {
           const ra = a.rating === "TBA" ? -1 : Number(a.rating);
           const rb = b.rating === "TBA" ? -1 : Number(b.rating);
           return rb - ra;
-        });
-    }
+        }
+      }
+    });
   };
 
   /* ---------- flatten → sort → paginate ---------- */
@@ -155,7 +167,7 @@ const MonthlyRatings = () => {
     page * PAGE_SIZE
   );
 
-  /* ---------- group for rendering (titles only) ---------- */
+  /* ---------- group for rendering ---------- */
 
   const groupedRatings = useMemo(() => {
     const map = new Map<string, RatingWithMonth[]>();
@@ -166,21 +178,20 @@ const MonthlyRatings = () => {
       map.get(key)!.push(r);
     });
 
-    return Array.from(map.entries()).map(([key, ratings]) => {
-      const [year, monthNum] = key.split("-");
-      return {
-        year: Number(year),
-        monthNum: Number(monthNum),
-        month: ratings[0].month,
-        ratings,
-      };
-    })
-    .sort((a, b) => {
-      if (a.year !== b.year) {
-        return b.year - a.year;
-      }
-      return b.monthNum - a.monthNum;
-    });
+    return Array.from(map.entries())
+      .map(([key, ratings]) => {
+        const [year, monthNum] = key.split("-");
+        return {
+          year: Number(year),
+          monthNum: Number(monthNum),
+          month: ratings[0].month,
+          ratings,
+        };
+      })
+      .sort((a, b) => {
+        if (a.year !== b.year) return b.year - a.year;
+        return b.monthNum - a.monthNum;
+      });
   }, [pagedRatings]);
 
   /* ---------- render ---------- */
@@ -190,47 +201,51 @@ const MonthlyRatings = () => {
       <PageContainer>
         <h1 className="text-3xl md:text-4xl mb-8">Monthly Ratings</h1>
 
-        <div className="flex flex-wrap gap-6 mb-6 pb-6 border-b border-border">
-          <FilterSelect
-            label="Year"
-            value={selectedYear}
-            options={years}
-            onChange={setSelectedYear}
-          />
-          <FilterSelect
-            label="Month"
-            value={selectedMonth}
-            options={months}
-            onChange={setSelectedMonth}
-          />
-        </div>
+        {/* 🔥 Control bar */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10 pb-6 border-b border-border">
+          {/* left: filters */}
+          <div className="flex flex-wrap gap-6">
+            <FilterSelect
+              label="Year"
+              value={selectedYear}
+              options={years}
+              onChange={setSelectedYear}
+            />
+            <FilterSelect
+              label="Month"
+              value={selectedMonth}
+              options={months}
+              onChange={setSelectedMonth}
+            />
+          </div>
 
-        {/* sort buttons */}
-        <div className="flex gap-3 text-sm text-muted-foreground mb-10">
-          <SortText
-            active={sortMode === "rating"}
-            onClick={() => setSortMode("rating")}
-          >
-            Rating
-          </SortText>
-          <SortText
-            active={sortMode === "title"}
-            onClick={() => setSortMode("title")}
-          >
-            Title
-          </SortText>
-          <SortText
-            active={sortMode === "director"}
-            onClick={() => setSortMode("director")}
-          >
-            Director
-          </SortText>
-          <SortText
-            active={sortMode === "year"}
-            onClick={() => setSortMode("year")}
-          >
-            Year
-          </SortText>
+          {/* right: ranking / sort */}
+          <div className="flex gap-3 text-sm text-muted-foreground">
+            <SortText
+              active={sortMode === "rating"}
+              onClick={() => setSortMode((prev) => (prev === "rating" ? "none" : "rating"))}
+            >
+              Rating
+            </SortText>
+            <SortText
+              active={sortMode === "title"}
+              onClick={() => setSortMode((prev) => (prev === "title" ? "none" : "title"))}
+            >
+              Title
+            </SortText>
+            <SortText
+              active={sortMode === "director"}
+              onClick={() => setSortMode((prev) => (prev === "director" ? "none" : "director"))}
+            >
+              Director
+            </SortText>
+            <SortText
+              active={sortMode === "year"}
+              onClick={() => setSortMode((prev) => (prev === "year" ? "none" : "year"))}
+            >
+              Year
+            </SortText>
+          </div>
         </div>
 
         {groupedRatings.length === 0 ? (
@@ -256,7 +271,6 @@ const MonthlyRatings = () => {
                       key={`${rating.film}-${rating.year}-${i}`}
                       className="grid md:grid-cols-[40px_80px_1fr_auto] gap-4 items-start"
                     >
-                      {/* page-local ranking */}
                       <div className="text-sm text-muted-foreground tabular-nums">
                         {i + 1}
                       </div>
