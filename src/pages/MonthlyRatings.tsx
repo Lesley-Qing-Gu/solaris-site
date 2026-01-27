@@ -56,6 +56,14 @@ const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "Ella McCay",
+        director: "James L. Brooks",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/0/9/0/7/2/8/1090728-ella-mccay-0-460-0-690-crop.jpg?v=7ef122460e",
+      },
+      {
         film: "Kokuho",
         director: "Sang-il Lee",
         year: 2025,
