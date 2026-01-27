@@ -48,6 +48,14 @@ const monthlyData: MonthData[] = [
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-2000-0-3000-crop.jpg?v=b14a26bb43",
       },
+      {
+        film: "Pillion",
+        director: "Harry Lighton",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/3/3/1170433-pillion-2025-0-2000-0-3000-crop.jpg?v=680a4585fe",
+      },
     ],
   },
   {
@@ -142,14 +150,6 @@ const monthlyData: MonthData[] = [
         rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/1/4/7/4/1281474-la-grazia-0-2000-0-3000-crop.jpg?v=d28244df69",
-      },
-      {
-        film: "Pillion",
-        director: "Harry Lighton",
-        year: 2025,
-        rating: "TBA",
-        note: "",
-        image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/3/3/1170433-pillion-2025-0-2000-0-3000-crop.jpg?v=680a4585fe",
       },
       {
         film: "Joan of arc",
