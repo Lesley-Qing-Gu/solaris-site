@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Members from "./pages/Members";
 import MonthlyRatings from "./pages/MonthlyRatings";
 import AnnualTop10 from "./pages/AnnualTop10";
-import FilmFestival from "./pages/FilmFestival";
+import FilmFestivals from "./pages/FilmFestivals";
 import Reviews from "./pages/Reviews";
 import ReviewDetail from "./pages/ReviewDetail";
 import News from "./pages/News";
@@ -28,7 +28,7 @@ const App = () => (
           <Route path="/members" element={<Members />} />
           <Route path="/monthly-ratings" element={<MonthlyRatings />} />
           <Route path="/annual-top10" element={<AnnualTop10 />} />
-          <Route path="/film-festivals" element={<FilmFestival />} />
+          <Route path="/film-festivals" element={<FilmFestivals />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/reviews/:id" element={<ReviewDetail />} />
           <Route path="/news" element={<News />} />
