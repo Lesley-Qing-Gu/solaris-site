@@ -28,7 +28,7 @@ const App = () => (
           <Route path="/members" element={<Members />} />
           <Route path="/monthly-ratings" element={<MonthlyRatings />} />
           <Route path="/annual-top10" element={<AnnualTop10 />} />
-          <Route path="/film-festival" element={<FilmFestival />} />
+          <Route path="/film-festivals" element={<FilmFestival />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/reviews/:id" element={<ReviewDetail />} />
           <Route path="/news" element={<News />} />

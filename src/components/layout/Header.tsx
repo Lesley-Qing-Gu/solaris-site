@@ -6,7 +6,7 @@ const navLinks = [
   { path: "/members", label: "Members" },
   { path: "/monthly-ratings", label: "Monthly Ratings" },
   { path: "/annual-top10", label: "Annual Top 10" },
-  { path: "/film-festival", label: "Film Festivals" },
+  { path: "/film-festivals", label: "Film Festivals" },
   { path: "/reviews", label: "Reviews" },
   { path: "/news", label: "News" },
 ];

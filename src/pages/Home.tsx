@@ -18,7 +18,7 @@ const Home = () => {
           <li><Link to="/members" className="hover:opacity-60 transition-opacity">Members</Link></li>
           <li><Link to="/monthly-ratings" className="hover:opacity-60 transition-opacity">Monthly Ratings</Link></li>
           <li><Link to="/annual-top10" className="hover:opacity-60 transition-opacity">Annual Top 10</Link></li>
-          <li><Link to="/film-festival" className="hover:opacity-60 transition-opacity">Film Festivals</Link></li>
+          <li><Link to="/film-festivals" className="hover:opacity-60 transition-opacity">Film Festivals</Link></li>
           <li><Link to="/reviews" className="hover:opacity-60 transition-opacity">Reviews</Link></li>
           <li><Link to="/news" className="hover:opacity-60 transition-opacity">News</Link></li>
         </ul>
