@@ -7,8 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Members from "./pages/Members";
 import MonthlyRatings from "./pages/MonthlyRatings";
-import AnnualSummary from "./pages/AnnualSummary";
-import FestivalRatings from "./pages/FestivalRatings";
+import AnnualTop10 from "./pages/AnnualTop10";
+import FilmFestival from "./pages/FilmFestival";
 import Reviews from "./pages/Reviews";
 import ReviewDetail from "./pages/ReviewDetail";
 import News from "./pages/News";
@@ -27,8 +27,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/members" element={<Members />} />
           <Route path="/monthly-ratings" element={<MonthlyRatings />} />
-          <Route path="/annual-summary" element={<AnnualSummary />} />
-          <Route path="/festival-ratings" element={<FestivalRatings />} />
+          <Route path="/annual-top10" element={<AnnualTop10 />} />
+          <Route path="/film-festival" element={<FilmFestival />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/reviews/:id" element={<ReviewDetail />} />
           <Route path="/news" element={<News />} />
