@@ -132,14 +132,6 @@ export const monthlyData: MonthData[] = [
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/1/4/7/4/1281474-la-grazia-0-2000-0-3000-crop.jpg?v=d28244df69",
       },
       {
-        film: "Joan of arc",
-        director: "Hlynur Pálmason",
-        year: 2025,
-        rating: "TBA",
-        note: "",
-        image: "https://a.ltrbxd.com/resized/film-poster/1/4/0/8/3/9/2/1408392-joan-of-arc-2025-0-2000-0-3000-crop.jpg?v=3483f88b2f",
-      },
-      {
         film: "The Last One for the Road",
         director: "Francesco Sossai",
         year: 2025,
