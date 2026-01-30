@@ -36,6 +36,14 @@ export const monthlyData: MonthData[] = [
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/3/3/1170433-pillion-2025-0-2000-0-3000-crop.jpg?v=680a4585fe",
       },
+      {
+        film: "La Grazia",
+        director: "Paolo Sorrentino",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/1/4/7/4/1281474-la-grazia-0-2000-0-3000-crop.jpg?v=d28244df69",
+      },
     ],
   },
   {
@@ -122,14 +130,6 @@ export const monthlyData: MonthData[] = [
         rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/9/7/2/6/0/9/972609-heads-or-tails-2025-0-460-0-690-crop.jpg?v=e22c78c5f2",
-      },
-      {
-        film: "La Grazia",
-        director: "Paolo Sorrentino",
-        year: 2025,
-        rating: "TBA",
-        note: "",
-        image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/1/4/7/4/1281474-la-grazia-0-2000-0-3000-crop.jpg?v=d28244df69",
       },
       {
         film: "The Last One for the Road",
