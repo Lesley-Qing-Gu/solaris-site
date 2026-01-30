@@ -19,7 +19,7 @@ export const solarisRatings: Record<string, string> = Object.fromEntries(
     ["The Butcher", "3.89"],
     ["Leibniz – Chronicle of a Lost Painting", "3.67"],
     ["Damnation", "3.45"],
-    ["Fire of Wind", "3.57"],
+    ["Fire of Wind", "3.63"],
     ["Romería", "3.47"],
     ["Heads or Tails?", "3.36"],
     ["Copper", "3.33"],
