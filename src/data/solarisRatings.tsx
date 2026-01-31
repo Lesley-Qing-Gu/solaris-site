@@ -34,6 +34,7 @@ export const solarisRatings: Record<string, string> = Object.fromEntries(
   ["The Voice of Hind Rajab", "2.10 (10)"],
   ["Kokuho", "2.00 (6)"],
   ["Sound of Falling", "2.14 (14)"],
-  ["Duse", "1.60 (5)"]
+  ["Duse", "1.60 (5)"],
+  ["Ella McCay", "3.50 (12)"]
   ].map(([title, score]) => [normalizeTitle(title), score])
 );
