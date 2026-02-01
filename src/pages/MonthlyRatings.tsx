@@ -46,6 +46,11 @@ const MonthlyRatings = () => {
 
   /* ---------- filter options ---------- */
 
+  const getRatingValue = (rating: string) => {
+    if (!rating || rating === "TBA") return -1;
+    return parseFloat(rating);
+  };
+
   const years = useMemo(() => {
     const uniqueYears = [...new Set(monthlyData.map((m) => m.year))].sort(
       (a, b) => b - a
@@ -135,8 +140,8 @@ const MonthlyRatings = () => {
 
         case "rating":
         default: {
-          const ra = a.rating === "TBA" ? -1 : Number(a.rating);
-          const rb = b.rating === "TBA" ? -1 : Number(b.rating);
+          const ra = a.rating === "TBA" ? -1 : parseFloat(a.rating);
+          const rb = b.rating === "TBA" ? -1 : parseFloat(b.rating);
           return rb - ra;
         }
       }

@@ -21,12 +21,20 @@ export const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
-        film: "Marty Supreme",
-        director: "Josh Safdie",
+        film: "The Disappearance of Josef Mengele",
+        director: "Kirill Serebrennikov",
         year: 2025,
         rating: "TBA",
         note: "",
-        image: "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-2000-0-3000-crop.jpg?v=b14a26bb43",
+        image: "https://a.ltrbxd.com/resized/film-poster/9/3/5/5/5/5/935555-the-disappearance-of-josef-mengele-0-460-0-690-crop.jpg?v=b0c48490d3",
+      },
+      {
+        film: "Strange River",
+        director: "Jaume Claret Muxart",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/9/2/4/2/9/0/924290-strange-river-0-460-0-690-crop.jpg?v=4c0ee444d5",
       },
       {
         film: "Pillion",
@@ -35,6 +43,22 @@ export const monthlyData: MonthData[] = [
         rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/3/3/1170433-pillion-2025-0-2000-0-3000-crop.jpg?v=680a4585fe",
+      },
+      {
+        film: "Yes",
+        director: "Nadav Lapid",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/0/3/6/5/7/0/1036570-yes-2025-0-460-0-690-crop.jpg?v=346a63b249",
+      },
+      {
+        film: "Marty Supreme",
+        director: "Josh Safdie",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-2000-0-3000-crop.jpg?v=b14a26bb43",
       },
       {
         film: "La Grazia",
