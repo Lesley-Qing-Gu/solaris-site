@@ -21,6 +21,14 @@ export const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "Hamnet",
+        director: "Chloé Zhao",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/7/7/2/2/3/2/772232-hamnet-0-460-0-690-crop.jpg?v=631489314d",
+      },
+      {
         film: "The Disappearance of Josef Mengele",
         director: "Kirill Serebrennikov",
         year: 2025,
