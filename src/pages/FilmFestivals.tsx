@@ -40,6 +40,14 @@ const festivalData: FestivalData[] = [
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/6/3/6/9/6/1163696-a-new-dawn-2026-0-460-0-690-crop.jpg?v=bfe9debeb7",
       },
       {
+        film: "Josephine",
+        director: "Beth de Araújo",
+        year: 2026,
+        rating: "TBA",
+        note: "Competition",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/1/8/1/5/8/1/1181581-josephine-2026-0-460-0-690-crop.jpg?v=bdde1cd1d5",
+      },
+      {
         film: "We Are All Strangers",
         director: "Anthony Chen",
         year: 2026,
