@@ -21,6 +21,14 @@ export const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
     {
+      film: "Henry Fonda for President",
+      director: "Alexander Horwath",
+      year: 2024,
+      rating: "TBA",
+      note: "",
+      image: "https://a.ltrbxd.com/resized/film-poster/1/1/0/5/3/8/1/1105381-henry-fonda-for-president-0-460-0-690-crop.jpg?v=fde8b2e05d",
+    },
+    {
       film: "Amrum",
       director: "Fatih Akin",
       year: 2025,
@@ -123,6 +131,14 @@ export const monthlyData: MonthData[] = [
         rating: "TBA",
         note: "",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/1/4/7/4/1281474-la-grazia-0-2000-0-3000-crop.jpg?v=d28244df69",
+      },
+      {
+        film: "Voice of Rain That Comes at Night",
+        director: "Igarashi Kohei",
+        year: 2008,
+        rating: "TBA",
+        note: "",
+        image: "/src/assets/yelaifengyusheng.JPG",
       },
     ],
   },
