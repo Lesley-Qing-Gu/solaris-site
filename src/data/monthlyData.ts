@@ -15,6 +15,21 @@ export interface MonthData {
 }
 
 export const monthlyData: MonthData[] = [
+{
+    month: "March",
+    monthNum: 3,
+    year: 2026,
+    ratings: [
+      {
+        film: "Father Mother Sister Brother",
+        director: "Jim Jarmusch",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/0/4/5/3/3/8/1045338-father-mother-sister-brother-0-460-0-690-crop.jpg?v=37e9e87d41",
+      },
+    ],
+  },
   {
     month: "February",
     monthNum: 2,
