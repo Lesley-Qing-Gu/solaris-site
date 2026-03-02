@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    textarea { width: 100%; height: 320px; padding: 12px; border: 1px solid #e5e5e5; border-radius: 6px; resize: none; }
+    button { background: #18A0FB; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    button:active { background: #0D8DE3; }
+    .hint { font-size: 11px; color: #999; }
+  </style>
+</head>
+<body>
+  <h2>Solaris 自动排版</h2>
+  <textarea id="input" placeholder="贴入数据..."></textarea>
+  <button id="go">一键生成卡片</button>
+  <p class="hint">请确保已选中一个组件实例作为模板。</p>
+
+  <script>
+    document.getElementById('go').onclick = () => {
+      const data = document.getElementById('input').value;
+      parent.postMessage({ pluginMessage: { type: 'generate', data } }, '*');
+    }
+  </script>
+</body>
+</html>
