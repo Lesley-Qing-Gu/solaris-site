@@ -361,7 +361,7 @@ const coverageData: Record<string, CoverageData> = {
     },
   "berlinale-2026-final": {
       id: "berlinale-2026-final",
-      title: "From Benning's Bridges to Schanelec's Tears  - Berlin final",
+      title: "From Benning's Bridges to Schanelec's Tears",
       festival: "Berlin Film Festival",
       year: 2026,
       author: "Cardinal, zyt, lesleygujiji",
@@ -384,7 +384,22 @@ const coverageData: Record<string, CoverageData> = {
         { type: "p", text: "柏林影展虽已落幕，但关于“生活即电影”的排演从未停止。感谢所有在影像褶皱中寻找真理的创作者与影迷，戛纳再见！👋" }
       ],
     },
-  };
+  "berlinale-2026-report": {
+      id: "berlinale-2026-report",
+      title: "Beyond the Golden Bear",
+      festival: "Berlin Film Festival",
+      year: 2026,
+      author: "KID Y",
+      date: "February 2026",
+      originalLink:"https://weibo.com/6755944278/5270614236725893?wm=3333_2001&from=10G2293010&sourcetype=weixin&rp_trans=M1lxcHNIeFo5VTgwdWQ5bnQ5YWhUK1UyeldsWFlKdmNVZktwYUY5RDhROURCMVZ2TUgzMnM3aFlpM3F2K0FpVDM0a3FwVENUekxhdGpmNEtkUUptU3daTWlpWTNXclUyQlcvL1lzNWl2dXAxU1BFNU91ci9ZamwwZlpZR0pEcjRnQzBsc3VhMzMvU0ZVbEZLK2VOazBnPT0%3D&s_trans=hjyPh8zORNW20mjRdgWYqw%3D%3D_5270614236725893_s&s_channel=4",
+      content: [
+        { type: "p", text: "第76届柏林电影节落下帷幕，特派记者KID Y在有限的时间内观摩了三部重磅获奖影片。尽管《海上女王》（应译为《茫然女王》）仅在结尾处理上略显遗憾，但获得金熊奖的《告知信》与获得最佳主角奖的《罗斯》在整体水准上均不尽如人意。" },
+        { type: "p", text: "《告知信》：金熊奖。土耳其裔德国导演伊尔塔尔·恰塔克试图通过“柏林代拍土耳其”的副标题设定将世界构建为表演舞台，但这一野心并未转化为有效的影像表达。导演刻意避免影像“穿帮”，使生活场景与德国环境彻底划清界限，导致影片未能实现对知识分子的普世围剿，反而显得固步自封。第三幕抛弃了戏剧本身的魅力，转而滑向刻意的抓马冲突与情感消耗，显示出导演对戏剧文本真实力量的漠视。" },
+        { type: "p", text: "《罗斯》：最佳主角奖。本片被评价为一则平庸的性别民间故事。尽管桑德拉·惠勒展现了雌雄难辨的精湛演技，但影片过分依赖表演，镜头往往略过日常细节而聚焦于特效化妆下的脸部特写。剧本在审判桥段彻底崩塌，将复杂的性别寓言简化为“女版贞德”的二元论叙事，牺牲了本该存在的暧昧性与混沌感，沦为纯粹为表演服务的空洞文本。" },
+        { type: "p", text: "《茫然女王》（Queen At Sea）：评审团奖、最佳配角奖。这是三部作品中最具趣味的一部，探讨了面对失智症时亲情态度的撕裂。影片巧妙地将伦敦的城市脉络与冲突融合：比诺什代表的“驾车/社会福利”派与继父代表的“步行/个人照顾”派互为对照。虽然结尾采用了过分戏剧化的悲剧处理，显示出导演对人物命运的某种不信任，但影片对城市空间与情感博弈的精准捕捉，至少让人感受到了镜头下残存的爱意。" }
+      ],
+    },
+};
 
 const FestivalCoverageDetail = () => {
   const { id } = useParams<{ id: string }>();
