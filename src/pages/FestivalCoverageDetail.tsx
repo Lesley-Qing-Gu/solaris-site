@@ -359,46 +359,22 @@ const coverageData: Record<string, CoverageData> = {
         { type: "p", text: "2025年的“平遥在水中”系列至此结束，感谢平遥电影节、志愿者、各位朋友以及读者的支持。" }
       ],
     },
-  "berlinale-2026-final": {
-      id: "berlinale-2026-final",
-      title: "From Benning's Bridges to Schanelec's Tears",
-      festival: "Berlin Film Festival",
-      year: 2026,
-      author: "Cardinal, zyt, lesleygujiji",
-      date: "February 2026",
-      originalLink: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTk0NjgzMjI4OTE0Nzgx?story_media_id=3836760351827957431&igsh=MWR2bm91N2dzNGFuYw==",
-      content: [
-        { type: "p", text: "第76届柏林国际电影节（2026年2月12日至22日）落下帷幕，Solaris记者团对本届重点影片进行了详细打分与深度评价。" },
-        { type: "p", text: "《German Beer》：Cardinal ★★★★★ / LesleyGujiji ★★★★ / zyt ★★★★ / 八哥 ★★★★。影评：‘德国啤酒’是排练好的社交自我，‘离婚故事’是失言后的私密自我。在生活这出戏里，‘爱自己’和‘面对真实’永远是最难递出的台词。" },
-        { type: "p", text: "《My Wife Cries》：zyt ★★★★★ / LesleyGujiji ★★★★★。影评：导演 Angela Schanelec 再次展现了精准的调度。她让主角卡拉遮住脸哭泣的样子，宛如原节子再现。" },
-        { type: "p", text: "《Dao》：zyt ★★★★★ / LesleyGujiji ★★★ / Cardinal ★★★。影评：在流动的音乐与躯体动作中，一系列仪式和人类情感缝合在一起。三小时的婚礼结束后，观众进入了一种兴奋的精疲力竭状态。" },
-        { type: "p", text: "《We Are All Strangers》：Cardinal ★★★★ / 八哥 ★★★★ / LesleyGujiji ★★ / zyt ★★ / 奇异果 ★★。影评：以炸面摊开场，将情节剧处理为带有Gen-Z色彩的尴尬浪漫。通过一场仓促的婚礼，这个紧凑的成长故事扩张到了城市的社会微缩景观中。" },
-        { type: "p", text: "《Eight Bridges》：LesleyGujiji ★★★ / zyt ★★★。影评：Benning 实现了影人的梦想——把旅行素材剪在一起就进了柏林。我们通过这些桥梁看到了工业美学、资本主义节奏与自然的交汇，触及了区域的脉搏。" },
-        { type: "p", text: "《Foreign Travel》：LesleyGujiji ★★★★ / zyt ★★★★ / 八哥 ★★★。影评：研讨会参与者的神态让人联想起斯特劳布与惠勒。对话、街道杂音与转场标题构成了层叠的声音结构，带我们进入了关于非真实的讨论。" },
-        { type: "p", text: "《The Blood Countess》：LesleyGujiji ★★★ / zyt ★★★。影评：一部幽默且好玩的电影，带你穿越各种场景。虽然德式幽默有时略显刻板，但吸血鬼胡佩特（Huppert）只捕食女性的设计赋予了它‘酷儿邪典’的能量。" },
-        { type: "p", text: "《Everything Else Is Noise》：Cardinal ★★★。影评：室内场景揭示了细微的环境变化。虽然声音设计从未完全进入更私密的听觉领域，但导演 Pereda 以相对的轻盈抵达了终点，通过笑声建立了一种默契。" },
-        { type: "p", text: "《Josephine》：Cardinal ★★。影评：危险地通过儿童视角框定了暴力创伤。不仅后期处理流于套路，且冲突被简化为‘教育’的辞令。很难让人相信片中所宣称的‘不再恐惧’。" },
-        { type: "p", text: "《A New Dawn》：zyt ★★★★ / LesleyGujiji ★★★ / Cardinal ★★ / 八哥 ★★。影评：情节薄弱且缺乏开发，只剩下受限的能量释放和零星的视觉想象。不过，带有 indietronica 风格的配乐确实很吸引人。" },
-        { type: "p", text: "《Rose》：LesleyGujiji ★★ / zyt ★★。影评：对经典文本的一次粗糙且表面的女性主义改编，一切都显得过于匆忙和尴尬。唯一值得感谢的是 Sandra Hüller 出演了这个角色。" },
-        { type: "p", text: "《Queen At Sea》：LesleyGujiji ★★★★ / zyt ★★★ / 八哥 ★★★。影评：探讨了跨越三代女性的亲密关系与家庭动态。导演为每位女性划定了不同的空间边界，但女儿的故事线略显粗糙。" },
-        { type: "p", text: "柏林影展虽已落幕，但关于“生活即电影”的排演从未停止。感谢所有在影像褶皱中寻找真理的创作者与影迷，戛纳再见！👋" }
-      ],
-    },
   "berlinale-2026-report": {
       id: "berlinale-2026-report",
-      title: "Beyond the Golden Bear",
+      title: "Beyond the Golden Bear: The Hollow Text and Performance of Berlin 2026",
       festival: "Berlin Film Festival",
       year: 2026,
       author: "KID Y",
       date: "February 2026",
-      originalLink:"https://weibo.com/6755944278/5270614236725893?wm=3333_2001&from=10G2293010&sourcetype=weixin&rp_trans=M1lxcHNIeFo5VTgwdWQ5bnQ5YWhUK1UyeldsWFlKdmNVZktwYUY5RDhROURCMVZ2TUgzMnM3aFlpM3F2K0FpVDM0a3FwVENUekxhdGpmNEtkUUptU3daTWlpWTNXclUyQlcvL1lzNWl2dXAxU1BFNU91ci9ZamwwZlpZR0pEcjRnQzBsc3VhMzMvU0ZVbEZLK2VOazBnPT0%3D&s_trans=hjyPh8zORNW20mjRdgWYqw%3D%3D_5270614236725893_s&s_channel=4",
+      originalLink: "https://weibo.com/6755944278/5270614236725893?wm=3333_2001&from=10G2293010&sourcetype=weixin&rp_trans=M1lxcHNIeFo5VTgwdWQ5bnQ5YWhUK1UyeldsWFlKdmNVZktwYUY5RDhROURCMVZ2TUgzMnM3aFlpM3F2K0FpVDM0a3FwVENUekxhdGpmNEtkUUptU3daTWlpWTNXclUyQlcvL1lzNWl2dXAxU1BFNU91ci9ZamwwZlpZR0pEcjRnQzBsc3VhMzMvU0ZVbEZLK2VOazBnPT0%3D&s_trans=hjyPh8zORNW20mjRdgWYqw%3D%3D_5270614236725893_s&s_channel=4",
       content: [
-        { type: "p", text: "第76届柏林电影节落下帷幕，特派记者KID Y在有限的时间内观摩了三部重磅获奖影片。尽管《海上女王》（应译为《茫然女王》）仅在结尾处理上略显遗憾，但获得金熊奖的《告知信》与获得最佳主角奖的《罗斯》在整体水准上均不尽如人意。" },
-        { type: "p", text: "《告知信》：金熊奖。土耳其裔德国导演伊尔塔尔·恰塔克试图通过“柏林代拍土耳其”的副标题设定将世界构建为表演舞台，但这一野心并未转化为有效的影像表达。导演刻意避免影像“穿帮”，使生活场景与德国环境彻底划清界限，导致影片未能实现对知识分子的普世围剿，反而显得固步自封。第三幕抛弃了戏剧本身的魅力，转而滑向刻意的抓马冲突与情感消耗，显示出导演对戏剧文本真实力量的漠视。" },
-        { type: "p", text: "《罗斯》：最佳主角奖。本片被评价为一则平庸的性别民间故事。尽管桑德拉·惠勒展现了雌雄难辨的精湛演技，但影片过分依赖表演，镜头往往略过日常细节而聚焦于特效化妆下的脸部特写。剧本在审判桥段彻底崩塌，将复杂的性别寓言简化为“女版贞德”的二元论叙事，牺牲了本该存在的暧昧性与混沌感，沦为纯粹为表演服务的空洞文本。" },
-        { type: "p", text: "《茫然女王》（Queen At Sea）：评审团奖、最佳配角奖。这是三部作品中最具趣味的一部，探讨了面对失智症时亲情态度的撕裂。影片巧妙地将伦敦的城市脉络与冲突融合：比诺什代表的“驾车/社会福利”派与继父代表的“步行/个人照顾”派互为对照。虽然结尾采用了过分戏剧化的悲剧处理，显示出导演对人物命运的某种不信任，但影片对城市空间与情感博弈的精准捕捉，至少让人感受到了镜头下残存的爱意。" }
-      ],
-    },
+        { type: "p", text: "又一年#柏林电影节#结束了，由维姆·文德斯领衔的评审团不但争议不断，选出的获奖影片也是暗淡无光。我们稍微聊聊吧。迫于时间原因笔者只看了三部，分别是获得了评审团奖和最佳配角的《海上女王》（应译为《茫然女王》），最佳主角的《罗斯》和金熊奖《告知信》，除了《海》只是结尾处理的比较遗憾，另外两部都是全方位的不行。" },
+        { type: "p", text: "首先先聊聊“荣获”金熊奖的《告知信》吧，这部土耳其裔德国导演伊尔塔尔·恰塔克的新作一上来就彰显了他的野心。用“柏林作为安卡拉”，“汉堡作为伊斯坦布尔”作为电影前两幕的副标题，它不仅表明了影片在德国代拍土耳其的事实，也与剧情中的戏剧文本产生了对应，也就是将世界作为一个表演的大舞台。但是这样的设定并没有得到有效的运用，除了那几个浮光掠影的游客视角外，导演似乎总是避免着他影像中的“土耳其”穿帮露陷，主角们都说着流利的土耳其语，他们日常的生活也与德国划清了界限。因此这里并没有达到导演设想的普世标准下对知识分子的围剿，而只是越来越固步自封。更糟糕的是影片的第三幕，尽管《告知信》的标题作为影片中的戏中戏出现，但导演并没有选择让这出剧目在电影中表演（不像滨口龙介，卡萨维蒂等导演对于戏剧的热爱）；恰恰相反，他选择让情节走向更加抓马，更多的冲突，更大的消耗，最终才能找到一个暂时的停歇点。可是，戏剧到底对导演来说重要吗？我想是否定的。" },
+        { type: "p", text: "获得最佳女主角奖的《罗斯》则是一则平庸的性别民间故事。桑德拉·惠勒雌雄难辨的表演自然不必多夸赞，但影片本身似乎太在乎她的表演了。在这则旧时代女扮男装试图获得新生活的寓言中，影像层面的简洁和冷峻很难找到一个确切的位置，它总是距离日常的动作和生活很远，反而把镜头对准了惠勒特效化妆下饱经沧桑的脸。这种文本上的薄弱在最后的审判桥段彻底暴露，“男人变成了女人，成为了又一个贞德”这样的设计瞬间让故事走向了一个二元论的性别观念，所以暧昧和混沌性都消失了，当然最终也只是为表演服务的。" },
+        { type: "p", text: "《茫然女王》是这三部里最有趣的作品，讲述了比诺什饰演的Amanda面对母亲日渐严重的失智症与继父态度上的差异所引发的一系列冲突。获奖的两位老演员汤姆和安娜（包扩比诺什）都交出非常真挚，令人泪目的表演，但令我更感兴趣的是本片城市脉络与故事的交融。在片中，比诺什总是选择社会福利机构，而继父则相信自己对爱人的照顾。这种冲突也与伦敦的交通相互映照：她总是驾车而他则选择步行，后者自然难以抵达问题的终点，但前者就可以吗？无解的冲突最终走向悲剧的，可能过分戏剧化的结局，这样的处理似乎显得导演不再信任着他镜头下的人物，借用悬而不决的问题终结了整部电影。但至少，这里曾是有爱的。" },
+        { type: "p", text: "还是去看《我的妻子哭了》吧嗯嗯！" }
+    ],
+  },
 };
 
 const FestivalCoverageDetail = () => {

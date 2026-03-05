@@ -35,13 +35,7 @@ const festivalData: FestivalData[] = [
     year: 2026,
     articles: [
       {
-        title: "From Benning's Bridges to Schanelec's Tears",
-        id: "berlinale-2026-final",
-        author: "Cardinal, zyt, lesleygujiji",
-        date: "February 2026"
-      },
-      {
-        title: "Beyond the Golden Bear",
+        title: "Beyond the Golden Bear: The Hollow Text and Performance of Berlin 2026",
         id: "berlinale-2026-report",
         author: "KID Y",
         date: "February 2026"
