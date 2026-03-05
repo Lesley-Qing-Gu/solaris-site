@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import PageContainer from "@/components/layout/PageContainer";
 import FilterSelect from "@/components/ui/FilterSelect";
@@ -12,16 +13,33 @@ interface FestivalFilm {
   image: string;
 }
 
+interface FestivalArticle {
+  title: string;
+  url?: string;
+  id?: string;
+  author?: string;
+  date?: string;
+}
+
 interface FestivalData {
   name: string;
   year: number;
   films: FestivalFilm[];
+  articles?: FestivalArticle[];
 }
 
 const festivalData: FestivalData[] = [
   {
     name: "Berlin Film Festival",
     year: 2026,
+    articles: [
+      {
+        title: "From Benning's Bridges to Schanelec's Tears - Berlin final",
+        id: "berlinale-2026-final",
+        author: "Cardinal, zyt, lesleygujiji",
+        date: "February 2026"
+      }
+    ],
     films: [
       {
         film: "Queen at Sea",
@@ -130,6 +148,43 @@ const festivalData: FestivalData[] = [
     ],
   },
   {
+    name: "Pingyao Film Festival",
+    year: 2025,
+    articles: [
+      {
+        title: "Shanxi Cannes - Day 1",
+        id: "pyiff-2025-day1",
+        author: "欧",
+        date: "September 2025"
+      },
+      {
+        title: "Meeting Xin Zhilei - Day 2",
+        id: "pyiff-2025-day2",
+        author: "欧",
+        date: "September 2025"
+      },
+      {
+        title: "Can't Understand Cannes Competition - Day 3",
+        id: "pyiff-2025-day3",
+        author: "欧",
+        date: "September 2025"
+      },
+      {
+        title: "I am a Female SWAT - Day 4",
+        id: "pyiff-2025-day4",
+        author: "欧",
+        date: "September 2025"
+      },
+      {
+        title: "Hangzhou New Wave in Pingyao - Day 5",
+        id: "pyiff-2025-day5",
+        author: "欧",
+        date: "September 2025"
+      }
+    ],
+    films: [],
+  },
+  {
     name: "Venice Film Festival",
     year: 2025,
     films: [
@@ -157,6 +212,125 @@ const festivalData: FestivalData[] = [
       },
     ],
   },
+  {
+    name: "Cannes Film Festival",
+    year: 2025,
+    articles: [
+      {
+        title: "Please Return My 'Mastermind' for Free - Cannes final",
+        id: "cannes-2025-final",
+        author: "zyt & LesleyGujiji",
+        date: "May 2025"
+      }
+    ],
+    films: [],
+  },
+  {
+    name: "Berlin Film Festival",
+    year: 2025,
+    articles: [
+      {
+        title: "What did Berlin 2025 say to you? - Day 0",
+        id: "berlin-2025-day0",
+        author: "zyt & LesleyGujiji",
+        date: "February 2025"
+      },
+      {
+        title: "The End of the Spree - Berlin final",
+        id: "berlin-2025-final",
+        author: "zyt & LesleyGujiji",
+        date: "February 2025"
+      }
+    ],
+    films: [],
+  },
+  {
+    name: "Pingyao Film Festival",
+    year: 2024,
+    articles: [
+      {
+        title: "Between the Kinos - 8th Pingyao Film Festival",
+        id: "pyiff-2024-between-the-kinos",
+        author: "欧 & zyt",
+        date: "September 2024"
+      }
+    ],
+    films: [],
+  },
+  {
+    name: "Cannes Film Festival",
+    year: 2024,
+    articles: [
+      {
+        title: "The Battle of Ticketing - Day 0",
+        id: "cannes-2024-day0",
+        author: "zyt",
+        date: "May 2024"
+      },
+      {
+        title: "OMG! She's Got No Name - Day 1",
+        id: "cannes-2024-day1",
+        author: "zyt",
+        date: "May 2024"
+      },
+      {
+        title: "Life is a Movie - Day 2 & 3",
+        id: "cannes-2024-day2-day3",
+        author: "zyt & LesleyGujiji",
+        date: "May 2024"
+      },
+      {
+        title: "Argentine Cinema & First Surprises - Day 3",
+        id: "cannes-2024-day3",
+        author: "KID Y",
+        date: "May 2024"
+      },
+      {
+        title: "Emilia Pérez & Lou Ye's Unfinished Film - Day 4",
+        id: "cannes-2024-day4",
+        author: "KID Y",
+        date: "May 2024"
+      },
+      {
+        title: "Pissball & Carax's Self-Portrait - Day 6",
+        id: "cannes-2024-day6",
+        author: "KID Y",
+        date: "May 2024"
+      },
+      {
+        title: "Cronenberg's The Shrouds - Day 8",
+        id: "cannes-2024-day8",
+        author: "KID Y",
+        date: "May 2024"
+      }
+    ],
+    films: [],
+  },
+  {
+    name: "Cannes Film Festival",
+    year: 2023,
+    articles: [
+      {
+        title: "Ticket Grabbing Battle & Schedule Adjustments - Day 0",
+        id: "cannes-2023-day0",
+        author: "zyt",
+        date: "May 2023"
+      },
+      {
+        title: "Sleepless Night & Five Films Marathon - Day 1",
+        id: "cannes-2023-day1",
+        author: "zyt",
+        date: "May 2023"
+      },
+      {
+        title: "Exhaustion & Final Reflections - Day 2 & 3",
+        id: "cannes-2023-day2-day3",
+        author: "zyt",
+        date: "May 2023"
+      }
+    ],
+    films: [],
+  },
 ];
 
 const FestivalRatings = () => {
@@ -170,8 +344,15 @@ const FestivalRatings = () => {
     return [{ value: "all", label: "All Years" }, ...uniqueYears.map((y) => ({ value: String(y), label: String(y) }))];
   }, []);
 
+  const contentTypes = [
+    { value: "all", label: "All" },
+    { value: "ratings", label: "Ratings" },
+    { value: "coverage", label: "Festival Coverage" }
+  ];
+
   const [selectedFestival, setSelectedFestival] = useState("all");
   const [selectedYear, setSelectedYear] = useState("all");
+  const [selectedContentType, setSelectedContentType] = useState("all");
 
   const filteredData = useMemo(() => {
     return festivalData.filter((f) => {
@@ -189,6 +370,7 @@ const FestivalRatings = () => {
         <div className="flex flex-wrap gap-6 mb-12 pb-6 border-b border-border">
           <FilterSelect label="Festival" value={selectedFestival} options={festivals} onChange={setSelectedFestival} />
           <FilterSelect label="Year" value={selectedYear} options={years} onChange={setSelectedYear} />
+          <FilterSelect label="Content" value={selectedContentType} options={contentTypes} onChange={setSelectedContentType} />
         </div>
 
         {filteredData.length === 0 ? (
@@ -201,27 +383,67 @@ const FestivalRatings = () => {
                   {festival.name} {festival.year}
                 </h2>
 
-                <div className="space-y-8">
-                  {festival.films.map((film, filmIndex) => (
-                    <div key={filmIndex} className="grid md:grid-cols-[80px_1fr_auto] gap-4 items-start">
-                      <img
-                        src={film.image}
-                        alt={film.film}
-                        className="w-20 h-28 object-cover grayscale"
-                      />
-                      <div>
-                        <h3 className="text-lg">
-                          {film.film}{" "}
-                          <span className="text-muted-foreground">
-                            ({film.director}, {film.year})
-                          </span>
-                        </h3>
-                        <p className="text-muted-foreground mt-1">{film.note}</p>
+                {(selectedContentType === "all" || selectedContentType === "ratings") && (
+                  <div className="space-y-8">
+                    {festival.films.map((film, filmIndex) => (
+                      <div key={filmIndex} className="grid md:grid-cols-[80px_1fr_auto] gap-4 items-start">
+                        <img
+                          src={film.image}
+                          alt={film.film}
+                          className="w-20 h-28 object-cover grayscale"
+                        />
+                        <div>
+                          <h3 className="text-lg">
+                            {film.film}{" "}
+                            <span className="text-muted-foreground">
+                              ({film.director}, {film.year})
+                            </span>
+                          </h3>
+                          <p className="text-muted-foreground mt-1">{film.note}</p>
+                        </div>
+                        <div className="text-lg md:text-right nav-text font-medium">{film.rating}</div>
                       </div>
-                      <div className="text-lg md:text-right nav-text font-medium">{film.rating}</div>
+                    ))}
+                  </div>
+                )}
+
+                {(selectedContentType === "all" || selectedContentType === "coverage") && festival.articles && festival.articles.length > 0 && (
+                  <div className="mt-12">
+                    <h3 className="text-lg mb-4 font-medium">Festival Coverage</h3>
+                    <div className="space-y-3">
+                      {festival.articles.map((article, articleIndex) => (
+                        <div key={articleIndex} className="border-l-2 border-border pl-4">
+                          {article.id ? (
+                            <Link
+                              to={`/festival-coverage/${article.id}`}
+                              className="text-lg hover:underline"
+                            >
+                              {article.title}
+                            </Link>
+                          ) : article.url ? (
+                            <a 
+                              href={article.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-lg hover:underline"
+                            >
+                              {article.title}
+                            </a>
+                          ) : (
+                            <span className="text-lg">{article.title}</span>
+                          )}
+                          {(article.author || article.date) && (
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {article.author && <span>{article.author}</span>}
+                              {article.author && article.date && <span> · </span>}
+                              {article.date && <span>{article.date}</span>}
+                            </p>
+                          )}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
               </section>
             ))}
           </div>

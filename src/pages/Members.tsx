@@ -48,7 +48,9 @@ const Members = () => {
                 Deputy Editors
               </div>
               <div className="text-lg md:text-xl leading-relaxed">
-                欧 <span className="text-foreground/60">·</span> 冬客
+                zyt
+                <span className="text-foreground/60">·</span> 欧
+                <span className="text-foreground/60">·</span> 冬客
               </div>
             </div>
 
@@ -68,7 +70,8 @@ const Members = () => {
                 Members
               </div>
               <div className="text-lg md:text-xl leading-relaxed">
-                dama
+                KID Y
+                <span className="text-foreground/60"> · </span>dama
                 <span className="text-foreground/60"> · </span>Parity
                 <span className="text-foreground/60"> · </span>Garmonbozia
                 <span className="text-foreground/60"> · </span>TWY
@@ -84,7 +87,6 @@ const Members = () => {
                 <span className="text-foreground/60"> · </span>冬客
                 <span className="text-foreground/60"> · </span>小植野
                 <span className="text-foreground/60"> · </span>蝴蝶脊
-                <span className="text-foreground/60"> · </span>KID Y
                 <span className="text-foreground/60"> · </span>莫失莫忘
                 <span className="text-foreground/60"> · </span>船续前行
                 <span className="text-foreground/60"> · </span>Satoko
