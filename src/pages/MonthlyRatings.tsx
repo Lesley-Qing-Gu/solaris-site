@@ -270,37 +270,29 @@ const MonthlyRatings = () => {
                   </h2>
                 </div>
 
-                <div className="space-y-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {group.ratings.map((rating, i) => (
                     <div
                       key={`${rating.film}-${rating.year}-${i}`}
-                      className="grid md:grid-cols-[40px_80px_1fr_auto] gap-4 items-start"
+                      className="group"
                     >
-                      <div className="text-sm text-muted-foreground tabular-nums">
-                        {i + 1}
+                      <div className="relative mb-2">
+                        <div className="absolute top-2 left-2 bg-background/90 px-2 py-1 text-sm font-medium">
+                          #{i + 1}
+                        </div>
+                        <img
+                          src={rating.image}
+                          alt={rating.film}
+                          className="w-full aspect-[2/3] object-cover grayscale"
+                        />
                       </div>
-
-                      <img
-                        src={rating.image}
-                        alt={rating.film}
-                        className="w-20 h-28 object-cover grayscale"
-                      />
-
-                      <div>
-                        <h3 className="text-lg">
-                          {rating.film}{" "}
-                          <span className="text-muted-foreground">
-                            ({rating.director}, {rating.year})
-                          </span>
-                        </h3>
-                        <p className="text-muted-foreground mt-1">
-                          {rating.note}
-                        </p>
-                      </div>
-
-                      <div className="text-lg md:text-right nav-text font-medium">
-                        {rating.rating}
-                      </div>
+                      <h3 className="text-sm mb-1">
+                        {rating.film}
+                      </h3>
+                      <p className="text-xs text-muted-foreground mb-2">
+                        {rating.director}, {rating.year}
+                      </p>
+                      <p className="text-sm font-sans font-medium">{rating.rating}</p>
                     </div>
                   ))}
                 </div>

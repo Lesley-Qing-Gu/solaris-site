@@ -571,24 +571,28 @@ const AnnualSummary = () => {
           <section>
             <h2 className="text-2xl mb-8 pb-2 border-b border-border">{selectedData.year}</h2>
 
-            <ol className="space-y-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
               {selectedData.films.map((entry) => (
-                <li key={entry.rank} className="grid md:grid-cols-[auto_80px_1fr] gap-4 items-start">
-                  <span className="text-2xl text-muted-foreground nav-text w-8">{entry.rank}</span>
-                  <img
-                    src={entry.image}
-                    alt={entry.film}
-                    className="w-20 h-28 object-cover grayscale"
-                  />
-                  <div>
-                    <h3 className="text-lg">
-                      {entry.film}
-                    </h3>
-                    <p className="text-muted-foreground mt-1">{entry.director}</p>
+                <div key={entry.rank} className="group">
+                  <div className="text-center mb-2">
+                    <span className="text-2xl font-sans font-medium">{entry.rank}</span>
                   </div>
-                </li>
+                  <div className="relative mb-2">
+                    <img
+                      src={entry.image}
+                      alt={entry.film}
+                      className="w-full aspect-[2/3] object-cover grayscale"
+                    />
+                  </div>
+                  <h3 className="text-sm mb-1">
+                    {entry.film}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mb-2">
+                    {entry.director}, {entry.year}
+                  </p>
+                </div>
               ))}
-            </ol>
+            </div>
             {gallery.length > 0 && (
               <div className="mt-12">
                 {/* Carousel container */}
