@@ -281,7 +281,7 @@ export const monthlyData: MonthData[] = [
         year: 2008,
         rating: "TBA",
         note: "",
-        image: "/src/assets/yelaifengyusheng.JPG",
+        image: "/monthly/Voice.jpg",
       },
     ],
   },
