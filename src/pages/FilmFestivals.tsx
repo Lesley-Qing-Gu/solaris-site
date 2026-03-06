@@ -29,6 +29,27 @@ interface FestivalData {
   articles?: FestivalArticle[];
 }
 
+const featuredArticles = [
+  {
+    id: "berlinale-2026-report",
+    title: "Beyond the Golden Bear: The Hollow Text and Performance of Berlin 2026",
+    festival: "Berlin Film Festival 2026",
+    image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80"
+  },
+  {
+    id: "cannes-2025-final",
+    title: "Please Return My 'Mastermind' for Free - Cannes final",
+    festival: "Cannes Film Festival 2025",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80"
+  },
+  {
+    id: "berlin-2025-final",
+    title: "The End of the Spree - Berlin final",
+    festival: "Berlin Film Festival 2025",
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"
+  }
+];
+
 const festivalData: FestivalData[] = [
   {
     name: "Berlin Film Festival",
@@ -511,6 +532,30 @@ const FestivalRatings = () => {
     <Layout>
       <PageContainer>
         <h1 className="text-3xl md:text-4xl mb-8">Film Festivals</h1>
+
+        {/* Featured Articles Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl mb-6">Recent Coverage</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {featuredArticles.map((article) => (
+              <Link
+                key={article.id}
+                to={`/festival-coverage/${article.id}`}
+                className="group block"
+              >
+                <div className="aspect-[3/2] overflow-hidden mb-3">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">{article.festival}</p>
+                <h3 className="text-lg group-hover:underline">{article.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-wrap gap-6 mb-12 pb-6 border-b border-border">
           <FilterSelect label="Festival" value={selectedFestival} options={festivals} onChange={setSelectedFestival} />
