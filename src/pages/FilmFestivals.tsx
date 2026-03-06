@@ -155,7 +155,7 @@ const festivalData: FestivalData[] = [
     year: 2025,
     articles: [
       {
-        title: "Shanxi Cannes - Day 1",
+        title: "One Battle After Another! - Day 1",
         id: "pyiff-2025-day1",
         author: "欧",
         date: "September 2025"
@@ -386,7 +386,7 @@ const festivalData: FestivalData[] = [
         date: "May 2024"
       },
       {
-        title: "Pissball & Carax's Self-Portrait - Day 6",
+        title: "Eephus & Carax's Self-Portrait - Day 6",
         id: "cannes-2024-day6",
         author: "KID Y",
         date: "May 2024"
@@ -468,7 +468,7 @@ const festivalData: FestivalData[] = [
         date: "May 2023"
       },
       {
-        title: "Exhaustion & Final Reflections - Day 2 & 3",
+        title: "The Zone of Interest & Gourmet's Death - Day 2 and 3",
         id: "cannes-2023-day2-day3",
         author: "zyt",
         date: "May 2023"
@@ -528,6 +528,44 @@ const FestivalRatings = () => {
                   {festival.name} {festival.year}
                 </h2>
 
+                {(selectedContentType === "all" || selectedContentType === "coverage") && festival.articles && festival.articles.length > 0 && (
+                  <div className="mb-12">
+                    <h3 className="text-lg mb-4 font-medium">Festival Coverage</h3>
+                    <div className="space-y-3">
+                      {festival.articles.map((article, articleIndex) => (
+                        <div key={articleIndex} className="border-l-2 border-border pl-4">
+                          {article.id ? (
+                            <Link
+                              to={`/festival-coverage/${article.id}`}
+                              className="text-lg hover:underline"
+                            >
+                              {article.title}
+                            </Link>
+                          ) : article.url ? (
+                            <a 
+                              href={article.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-lg hover:underline"
+                            >
+                              {article.title}
+                            </a>
+                          ) : (
+                            <span className="text-lg">{article.title}</span>
+                          )}
+                          {(article.author || article.date) && (
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {article.author && <span>{article.author}</span>}
+                              {article.author && article.date && <span> · </span>}
+                              {article.date && <span>{article.date}</span>}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {(selectedContentType === "all" || selectedContentType === "ratings") && festival.films.length > 0 && (
                   <div className="space-y-8">
                     {festival.films
@@ -566,44 +604,6 @@ const FestivalRatings = () => {
                         <div className="text-lg md:text-right nav-text font-medium">{film.rating}</div>
                       </div>
                     ))}
-                  </div>
-                )}
-
-                {(selectedContentType === "all" || selectedContentType === "coverage") && festival.articles && festival.articles.length > 0 && (
-                  <div className="mt-12">
-                    <h3 className="text-lg mb-4 font-medium">Festival Coverage</h3>
-                    <div className="space-y-3">
-                      {festival.articles.map((article, articleIndex) => (
-                        <div key={articleIndex} className="border-l-2 border-border pl-4">
-                          {article.id ? (
-                            <Link
-                              to={`/festival-coverage/${article.id}`}
-                              className="text-lg hover:underline"
-                            >
-                              {article.title}
-                            </Link>
-                          ) : article.url ? (
-                            <a 
-                              href={article.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-lg hover:underline"
-                            >
-                              {article.title}
-                            </a>
-                          ) : (
-                            <span className="text-lg">{article.title}</span>
-                          )}
-                          {(article.author || article.date) && (
-                            <p className="text-sm text-muted-foreground mt-1">
-                              {article.author && <span>{article.author}</span>}
-                              {article.author && article.date && <span> · </span>}
-                              {article.date && <span>{article.date}</span>}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 )}
               </section>

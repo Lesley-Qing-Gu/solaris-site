@@ -71,6 +71,24 @@ const About = () => {
                 </a>
               </div>
             </div>
+
+            {/* Contact */}
+            <div className="pt-8 border-t border-border">
+              <h2 className="text-xl mb-6">Contact</h2>
+              <div className="space-y-3 text-foreground/90">
+                <p>
+                  <span className="text-muted-foreground">Email:</span>{" "}
+                  <a href="mailto:solaris.cinema1@gmail.com" className="hover:opacity-60 transition-opacity">
+                    solaris.cinema1@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <span className="text-muted-foreground">Address:</span>{" "}
+                  Zhongshan Middle Road No.382-4, Shangcheng<br />
+                  Hangzhou, Zhejiang, China
+                </p>
+              </div>
+            </div>
           </div>
         </article>
       </PageContainer>

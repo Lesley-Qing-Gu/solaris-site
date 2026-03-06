@@ -15,6 +15,13 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
+    id: "4",
+    title: "SOLARIS at the 76th Berlinale",
+    date: "February 13, 2026",
+    content:
+      "We're thrilled to announce that our editorial team has arrived in Berlin for the 76th Berlin International Film Festival.\n\nEditors zyt, LesleyGujiji, Cardinal, and 奇异果 will be bringing you on-the-ground coverage throughout the festival — including first impressions, reviews, and conversations from one of cinema's most vital gathering places.\n\nStay tuned for updates from the Berlinale as we explore this year's Competition, Panorama, Forum, and beyond.",
+  },
+  {
     id: "1",
     title: "Instagram account is now live!",
     date: "January 16, 2026",
@@ -37,7 +44,7 @@ const newsItems: NewsItem[] = [
     title: "New Editorial Team Announced",
     date: "December 17, 2025",
     content:
-     "In December, the new SOLARIS editorial team was officially formed.\n Editors-in-Chief: Cardinal, LesleyGujiji\n Associate Editors: 欧, 冬客\n\nWe look forward to the coming year as SOLARIS continues to expand internationally, embrace diverse perspectives, and move forward with clarity and confidence."
+     "In December, the new SOLARIS editorial team was officially formed.\n Editors-in-Chief: Cardinal, LesleyGujiji\n Associate Editors: zyt, 欧, 冬客\n\nWe look forward to the coming year as SOLARIS continues to expand internationally, embrace diverse perspectives, and move forward with clarity and confidence."
   },
 ];
 
