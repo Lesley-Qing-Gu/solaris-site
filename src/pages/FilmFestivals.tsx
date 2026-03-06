@@ -34,19 +34,19 @@ const featuredArticles = [
     id: "berlinale-2026-report",
     title: "Beyond the Golden Bear: The Hollow Text and Performance of Berlin 2026",
     festival: "Berlin Film Festival 2026",
-    image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80"
+    image: "/filmfestival/berlin2026.jpg"
   },
   {
     id: "cannes-2025-final",
     title: "Please Return My 'Mastermind' for Free - Cannes final",
     festival: "Cannes Film Festival 2025",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80"
+    image: "/filmfestival/cannes2025.jpg"
   },
   {
     id: "berlin-2025-final",
     title: "The End of the Spree - Berlin final",
     festival: "Berlin Film Festival 2025",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"
+    image: "/filmfestival/berlin2025.jpg"
   }
 ];
 
