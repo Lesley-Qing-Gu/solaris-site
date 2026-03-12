@@ -25,7 +25,7 @@ export const monthlyData: MonthData[] = [
         director: "Mona Fastvold",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "Literally The Cult of Pastoral Feminism, set within a primitive, backward, and traditional environment—one even more perilous and fraught with violence than our own (perhaps regressive) present. Precious slices of history are rendered abstract and hollow; here, a satire of the movement's absurdity runs parallel with a recognition of its goodwill, a gentle touch, and a gaze of compassionate insight. —— Parity",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/4/6/2/7/1284627-the-testament-of-ann-lee-0-460-0-690-crop.jpg?v=3da6a9dae0",
       },
       {
@@ -33,7 +33,7 @@ export const monthlyData: MonthData[] = [
         director: "Werner Herzog",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "A straightforward educational doc. Aside from the narration, there’s hardly a trace of Herzog’s usual signature here, and the subject matter offers almost no unexpected detours. —— 莫失莫忘",
         image: "https://a.ltrbxd.com/resized/film-poster/1/3/2/9/4/0/3/1329403-ghost-elephants-0-460-0-690-crop.jpg?v=9f0ca4d669",
       },
       {
@@ -41,7 +41,7 @@ export const monthlyData: MonthData[] = [
         director: "Johanna Moder",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "A clear tribute to Rosemary’s Baby in name and aesthetic. The director has mimicked Polanski’s fluid camerawork but missed his disciplined restraint. While the use of space successfully generates Polanski-esque claustrophobia, the postpartum anxiety arc is disjointed; the character unravels too quickly, lacking the slow-burn pacing needed for true impact. Schubert’s score is a highlight, echoing the tension between order and chaos found in Death and the Maiden. Yet, the film is marred by two unforgivable technical blunders: the obvious faking of the piano performance and the even more glaringly amateur conducting. —— 欧",
         image: "https://a.ltrbxd.com/resized/film-poster/1/3/0/1/0/4/5/1301045-mothers-baby-0-460-0-690-crop.jpg?v=2bfbfa91fa",
       },
       {
@@ -49,7 +49,7 @@ export const monthlyData: MonthData[] = [
         director: "Lav Diaz",
         year: 2024,
         rating: "TBA",
-        note: "",
+        note: "I wonder what a Diaz film would look like if he maintained the intensity of the opening throughout. He tends to dilute narrative tension, breaking it down into segments centered on a few individuals before choosing between abstract or concrete modes of expression. — dama",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/0/0/8/4/9/1200849-phantosmia-0-460-0-690-crop.jpg?v=8d2241329e",
       },
       {
@@ -57,7 +57,7 @@ export const monthlyData: MonthData[] = [
         director: "Jim Jarmusch",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "The Jarmusch triptych: precise framing, painterly mise-en-scène, and recurring motifs that skip through the narrative like alliteration. These dense, almost ludic elements build a mystical facade of daily life in the first two chapters. This facade invites us back into Jarmusch’s iconic, wallowing awkwardness while providing a rare, imaginative depth to the depiction of aging—which is usually flattened by the cinematic gaze. Yet, in the story of the siblings, the lack of a distinct lifestyle-as-other and a preoccupation with material nostalgia over interpersonal tension causes the wonder of his motifs to lose their hold. They suffer a regrettable and rapid collapse. — 网师",
         image: "https://a.ltrbxd.com/resized/film-poster/1/0/4/5/3/3/8/1045338-father-mother-sister-brother-0-460-0-690-crop.jpg?v=37e9e87d41",
       },
       {
@@ -65,7 +65,7 @@ export const monthlyData: MonthData[] = [
         director: "Aidan Zamiri",
         year: 2026,
         rating: "TBA",
-        note: "",
+        note: "The artist seemed to think they were inhabiting Afternoon of Solitude, but it was clearly just an act. So, after all the posturing, the choice was still to compromise for commercial appeal and stifle the work’s integrity? Fine, Charli, you’ve won. But what happens to the real brats in this dynamic? — KID Y",
         image: "https://a.ltrbxd.com/resized/film-poster/1/3/0/1/7/0/4/1301704-the-moment-2026-0-460-0-690-crop.jpg?v=b001663404",
       },
       {
@@ -81,7 +81,7 @@ export const monthlyData: MonthData[] = [
         director: "Alex Ross Perry",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "Using film clips as the primary discourse for a film about video stores is nearly an act of cinephilic virtuosity. While the assembly of footage is vast and complex, it never becomes tedious. — Cardinal",
         image: "https://a.ltrbxd.com/resized/film-poster/1/2/7/2/2/4/0/1272240-videoheaven-0-460-0-690-crop.jpg?v=fe8fd227af",
       },
       {
@@ -89,7 +89,7 @@ export const monthlyData: MonthData[] = [
         director: "François Ozon",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "Camus’s prescience and the alienation of The Stranger are far more legible in the modern age. A human being cannot withstand the microscopic scrutiny of a trial; indifference should not be a crime. From the extreme close-up of a man’s armpit to the framing of the face and the sex scenes, the climax captures a distinctly Ozon-esque sensibility. —— 船续前行",
         image: "https://a.ltrbxd.com/resized/film-poster/1/3/0/8/2/7/4/1308274-the-stranger-2025-1-0-460-0-690-crop.jpg?v=88eaf05045",
       },
       {
@@ -97,7 +97,7 @@ export const monthlyData: MonthData[] = [
         director: "Sergei Loznitsa",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "Loznitsa’s previous fiction films were shaped more like abstract, hypothetical games, often shrouded in a sense of the walking dead. While The State Prosecutor remains direct and transparent in its stance, it feels like his first true melodrama; its more rigid, old-fashioned narrative absorbs more of the static energy within each scene. When characters address the camera, one is frequently reminded of the works of Wang Bing. —— Ada的B计划",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/4/1/4/8/0/1141480-two-prosecutors-0-460-0-690-crop.jpg?v=f056157276",
       },
       {
@@ -105,7 +105,7 @@ export const monthlyData: MonthData[] = [
         director: "Tarik Saleh",
         year: 2025,
         rating: "TBA",
-        note: "",
+        note: "Seems like Saleh’s life goal is to be a professional insider for the power players. He’s better suited for a gossip rag, dreaming up clickbait for the front page. He’d have a massive following on social media in a heartbeat with those insider tea vibes. —— 嘟嘟熊之父",
         image: "https://a.ltrbxd.com/resized/film-poster/1/1/0/4/3/4/6/1104346-eagles-of-the-republic-0-460-0-690-crop.jpg?v=904dc73909",
       },
     ],
