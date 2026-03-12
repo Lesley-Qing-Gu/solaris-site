@@ -15,6 +15,17 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
+    id: "5",
+    title: "New Review: What Does that Nature Say to You",
+    date: "March 12, 2026",
+    content:
+      "A new review by 欧 is now available.\n\nIn this piece, 欧 explores Hong Sang-soo's latest film What Does that Nature Say to You, examining how the director uses camera movements, repetition, and humor to blur the boundaries between poetry and cinema.\n\nRead the full review in our Reviews section.",
+    link: {
+      label: "Read Review →",
+      url: "/reviews/tt35499025-review",
+    },
+  },
+  {
     id: "4",
     title: "SOLARIS at the 76th Berlinale",
     date: "February 13, 2026",

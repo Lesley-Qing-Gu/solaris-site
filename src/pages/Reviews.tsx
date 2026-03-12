@@ -15,6 +15,16 @@ interface Review {
 
 const reviews: Review[] = [
   {
+    id: "tt35499025-review",
+    title: "生活是诗还是电影？",
+    film: "What Does that Nature Say to You",
+    director: "Sang-soo Hong",
+    year: 2025,
+    author: "欧",
+    date: "March 12, 2026",
+    excerpt: "大自然对我们说了什么？东华在寺庙谈论我们如何用身体感受世界，起身离开，摄影机呈现了一个向上抬起的动作，我们看着让东华在后文想起埋葬岳父的母亲的那棵树...",
+  },
+  {
     id: "yes-review",
     title: "笔记：同义词",
     film: "Yes",
