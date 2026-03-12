@@ -4,6 +4,7 @@ import PageContainer from "@/components/layout/PageContainer";
 import FilterSelect from "@/components/ui/FilterSelect";
 import { solarisRatings } from "@/data/solarisRatings";
 import { monthlyData } from "@/data/monthlyData";
+import { X } from "lucide-react";
 
 /* ---------- types ---------- */
 
@@ -43,6 +44,7 @@ const MonthlyRatings = () => {
   const [selectedMonth, setSelectedMonth] = useState("all");
   const [sortMode, setSortMode] = useState<SortMode>("none");
   const [page, setPage] = useState(1);
+  const [selectedRating, setSelectedRating] = useState<RatingWithMonth | null>(null);
 
   /* ---------- filter options ---------- */
 
@@ -276,15 +278,25 @@ const MonthlyRatings = () => {
                       key={`${rating.film}-${rating.year}-${i}`}
                       className="group"
                     >
-                      <div className="relative mb-2">
+                      <div 
+                        className="relative mb-2 cursor-pointer"
+                        onClick={() => rating.note && setSelectedRating(rating)}
+                      >
                         <div className="absolute top-2 left-2 bg-background/90 px-2 py-1 text-sm font-medium">
                           #{i + 1}
                         </div>
                         <img
                           src={rating.image}
                           alt={rating.film}
-                          className="w-full aspect-[2/3] object-cover grayscale"
+                          className={`w-full aspect-[2/3] object-cover grayscale transition-opacity ${
+                            rating.note ? "group-hover:opacity-70" : ""
+                          }`}
                         />
+                        {rating.note && (
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-white text-xs bg-black/70 px-3 py-1 rounded">View Note</span>
+                          </div>
+                        )}
                       </div>
                       <h3 className="text-sm mb-1">
                         {rating.film}
@@ -325,6 +337,45 @@ const MonthlyRatings = () => {
               </div>
             )}
           </>
+        )}
+
+        {/* Modal for displaying note */}
+        {selectedRating && (
+          <div 
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedRating(null)}
+          >
+            <div 
+              className="bg-background border border-border max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedRating(null)}
+                className="absolute top-4 right-4 text-muted-foreground hover:text-white transition"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="flex gap-6 mb-6">
+                <img
+                  src={selectedRating.image}
+                  alt={selectedRating.film}
+                  className="w-32 aspect-[2/3] object-cover grayscale flex-shrink-0"
+                />
+                <div>
+                  <h2 className="text-2xl mb-2">{selectedRating.film}</h2>
+                  <p className="text-muted-foreground mb-2">
+                    {selectedRating.director}, {selectedRating.year}
+                  </p>
+                  <p className="text-lg font-sans font-medium">{selectedRating.rating}</p>
+                </div>
+              </div>
+              
+              <div className="prose prose-invert max-w-none">
+                <p className="text-foreground/90 whitespace-pre-line">{selectedRating.note}</p>
+              </div>
+            </div>
+          </div>
         )}
       </PageContainer>
     </Layout>

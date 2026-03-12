@@ -21,6 +21,38 @@ export const monthlyData: MonthData[] = [
     year: 2026,
     ratings: [
       {
+        film: "The Testament of Ann Lee",
+        director: "Mona Fastvold",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/2/8/4/6/2/7/1284627-the-testament-of-ann-lee-0-460-0-690-crop.jpg?v=3da6a9dae0",
+      },
+      {
+        film: "Ghost Elephants",
+        director: "Werner Herzog",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/3/2/9/4/0/3/1329403-ghost-elephants-0-460-0-690-crop.jpg?v=9f0ca4d669",
+      },
+      {
+        film: "Mother’s Baby",
+        director: "Johanna Moder",
+        year: 2025,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/3/0/1/0/4/5/1301045-mothers-baby-0-460-0-690-crop.jpg?v=2bfbfa91fa",
+      },
+      {
+        film: "Phantosmia",
+        director: "Lav Diaz",
+        year: 2024,
+        rating: "TBA",
+        note: "",
+        image: "https://a.ltrbxd.com/resized/film-poster/1/2/0/0/8/4/9/1200849-phantosmia-0-460-0-690-crop.jpg?v=8d2241329e",
+      },
+      {
         film: "Father Mother Sister Brother",
         director: "Jim Jarmusch",
         year: 2025,

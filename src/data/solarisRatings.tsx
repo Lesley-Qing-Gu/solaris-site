@@ -44,7 +44,6 @@ export const solarisRatings: Record<string, string> = Object.fromEntries(
   ["Hamnet", "2.64 (22)"],
   ["Amrum", "2.00 (1)"],
   ["The Disappearance of Josef Mengele", "2.00 (2)"],
-  ["Mother’s Baby", "2.83 (6)"],
   ["Yes", "4.15 (27)"],
   ["Orphan", "2.00 (5)"],
   ["Is This Thing On?", "2.50 (2)"],
