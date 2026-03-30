@@ -81,7 +81,6 @@ const Members = () => {
                 <span className="text-foreground/60"> · </span>granite_silver
                 <span className="text-foreground/60"> · </span>藍色大門
                 <span className="text-foreground/60"> · </span>东瞅西
-                <span className="text-foreground/60"> · </span>司马粮
                 <span className="text-foreground/60"> · </span>被窝焖小狗
                 <span className="text-foreground/60"> · </span>好风
                 <span className="text-foreground/60"> · </span>冬客
@@ -90,7 +89,6 @@ const Members = () => {
                 <span className="text-foreground/60"> · </span>莫失莫忘
                 <span className="text-foreground/60"> · </span>船续前行
                 <span className="text-foreground/60"> · </span>Satoko
-                <span className="text-foreground/60"> · </span>ツ
                 <span className="text-foreground/60"> · </span>Scapul
                 <span className="text-foreground/60"> · </span>嘟嘟熊之父
                 <span className="text-foreground/60"> · </span>红与橙

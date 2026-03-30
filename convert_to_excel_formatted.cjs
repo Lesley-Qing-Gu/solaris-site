@@ -1,13 +1,23 @@
 const fs = require('fs');
 const ExcelJS = require('exceljs');
 
-const data = JSON.parse(fs.readFileSync('solaris-results-2026-02-27.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('solaris-results-2026-03-30.json', 'utf-8'));
+const doubanMovies = JSON.parse(fs.readFileSync('douban_movies.json', 'utf-8'));
+
+// Build douban_id -> English name map
+const idToEnglish = {};
+doubanMovies.forEach(m => {
+  if (m.douban_id && m.input) {
+    const match = m.input.match(/^(.+?)\s*\(/);
+    if (match) idToEnglish[m.douban_id] = match[1].trim();
+  }
+});
 
 const ratingsMap = {};
 const allMembers = new Set();
 
 for (const [movieId, movieData] of Object.entries(data)) {
-  const title = movieData.title_en || movieData.title.replace(' 短评', '');
+  const title = idToEnglish[movieId] || movieData.title.replace(' 短评', '');
   ratingsMap[title] = {};
   
   movieData.users.forEach(userRating => {
@@ -75,5 +85,5 @@ worksheet.eachRow((row, rowNumber) => {
   });
 });
 
-workbook.xlsx.writeFile('solaris-results-2026-02-27-final.xlsx')
-  .then(() => console.log('Excel文件已生成：solaris-results-2026-02-27-final.xlsx'));
+workbook.xlsx.writeFile('solaris-results-2026-03-30-final.xlsx')
+  .then(() => console.log('Excel文件已生成：solaris-results-2026-03-30-final.xlsx'));
