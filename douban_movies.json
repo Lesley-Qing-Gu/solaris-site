@@ -1,152 +1,114 @@
 [
   {
-    "input": "Blades of the Guardians: Wind Rises in the Desert (Yuen Woo-Ping, 2026)",
-    "title": "镖人：风起大漠",
-    "year": "2026",
-    "douban_id": "36474027"
-  },
-  {
-    "input": "Per Aspera Ad Astra (Han Yan, 2026)",
-    "title": "星河入梦",
-    "year": "2026",
-    "douban_id": "36883105"
-  },
-  {
-    "input": "Scare Out (Zhang Yimou, 2026)",
-    "title": "惊蛰无声",
-    "year": "2026",
-    "douban_id": "37242440"
-  },
-  {
-    "input": "Pegasus 3 (Han Han, 2026)",
-    "title": "飞驰人生3",
-    "year": "2026",
-    "douban_id": "37311135"
-  },
-  {
-    "input": "Resurrection (Bi Gan, 2025)",
-    "title": "狂野时代",
+    "input": "Scarlet (Mamoru Hosoda, 2025)",
+    "title": "复仇公主斯嘉丽 果てしなきスカーレット",
     "year": "2025",
-    "douban_id": "35416174"
+    "douban_id": "37169413"
   },
   {
-    "input": "Girl (Shu Qi, 2025)",
-    "title": "女孩",
+    "input": "Magellan (Lav Diaz, 2025)",
+    "title": "麦哲伦 Magalhães",
     "year": "2025",
-    "douban_id": "36986482"
+    "douban_id": "37309944"
   },
   {
-    "input": "Dead Man’s Wire (Gus Van Sant, 2025)",
-    "title": "死人开关 Dead Man&#39;s Wire",
+    "input": "The Testament of Ann Lee (Mona Fastvold, 2025)",
+    "title": "安·李的遗嘱 The Testament of Ann Lee",
     "year": "2025",
-    "douban_id": "36803372"
+    "douban_id": "37155367"
   },
   {
-    "input": "Arco (Ugo Bienvenu, 2025)",
-    "title": "时空奇旅 Arco",
+    "input": "Debut, or, Objects of the Field of Debris as Currently Catalogued (Julian Castronovo, 2025)",
+    "title": "第一部电影，或当前已编目的残片整理 Debut, or, Objects of the Field of Debris as Currently Catalogued",
     "year": "2025",
-    "douban_id": "35346268"
+    "douban_id": "37070212"
   },
   {
-    "input": "Henry Fonda for President (Alexander Horwath, 2024)",
-    "title": "亨利·方达竞选总统 Henry Fonda for President",
+    "input": "Scream 7 (Kevin Williamson, 2026)",
+    "title": "惊声尖叫7 Scream 7",
+    "year": "2026",
+    "douban_id": "36314193"
+  },
+  {
+    "input": "Case 137 (Dominik Moll, 2025)",
+    "title": "137号案件 Dossier 137",
+    "year": "2025",
+    "douban_id": "37144851"
+  },
+  {
+    "input": "The Love That Remains (Hlynur Pálmason, 2025)",
+    "title": "留存的爱 Ástin sem eftir er",
+    "year": "2025",
+    "douban_id": "36955318"
+  },
+  {
+    "input": "Send Help (Sam Raimi, 2026)",
+    "title": "请求救援 Send Help",
+    "year": "2026",
+    "douban_id": "34864022"
+  },
+  {
+    "input": "The Bride! (Maggie Gyllenhaal, 2026)",
+    "title": "暗黑新娘！ The Bride!",
+    "year": "2026",
+    "douban_id": "36503073"
+  },
+  {
+    "input": "Ghost Elephants (Werner Herzog, 2025)",
+    "title": "追寻幽灵大象 Ghost Elephants",
+    "year": "2025",
+    "douban_id": "37148366"
+  },
+  {
+    "input": "Mother’s Baby (Johanna Moder, 2025)",
+    "title": "母亲的宝贝 Mother&#39;s Baby‎",
+    "year": "2025",
+    "douban_id": "36159758"
+  },
+  {
+    "input": "Phantosmia (Lav Diaz, 2024)",
+    "title": "幻嗅 Phantosmia",
     "year": "2024",
-    "douban_id": "36741382"
+    "douban_id": "36977633"
   },
   {
-    "input": "Amrum (Fatih Akin, 2025)",
-    "title": "阿姆鲁姆 Amrum",
+    "input": "Father Mother Sister Brother (Jim Jarmusch, 2025)",
+    "title": "父母姐弟 Father Mother Sister Brother",
     "year": "2025",
-    "douban_id": "36116464"
+    "douban_id": "36635632"
   },
   {
-    "input": "Is This Thing On? (Bradley Cooper, 2025)",
-    "title": "开麦了吗？ Is This Thing On?",
+    "input": "The Moment (Aidan Zamiri, 2026)",
+    "title": "绚烂一刻 The Moment",
+    "year": "2026",
+    "douban_id": "37207219"
+  },
+  {
+    "input": "Queerpanorama (Jun Li, 2025)",
+    "found": false
+  },
+  {
+    "input": "Videoheaven (Alex Ross Perry, 2025)",
+    "title": "音像天堂 Videoheaven",
     "year": "2025",
-    "douban_id": "36446114"
+    "douban_id": "36765592"
   },
   {
-    "input": "The Chronology of Water (Kristen Stewart, 2025)",
-    "title": "水之年代 The Chronology of Water",
+    "input": "The Stranger (François Ozon, 2025)",
+    "title": "局外人 L&#39;Étranger",
     "year": "2025",
-    "douban_id": "30419032"
+    "douban_id": "37284351"
   },
   {
-    "input": "You are the Best (Jiang Wen, 2025)",
-    "title": "你行！你上！",
+    "input": "Two Prosecutors (Sergei Loznitsa, 2025)",
+    "title": "国家公诉人 Zwei Staatsanwälte",
     "year": "2025",
-    "douban_id": "36767956"
+    "douban_id": "36587901"
   },
   {
-    "input": "The Great Arch (Stéphane Demoustier, 2025)",
-    "title": "新凯旋门 L&#39;inconnu de la grande arche",
+    "input": "Eagles of the Republic (Tarik Saleh, 2025)",
+    "title": "共和之鹰 Les Aigles de la République",
     "year": "2025",
-    "douban_id": "36728357"
-  },
-  {
-    "input": "Hamnet (Chloé Zhao, 2025)",
-    "title": "哈姆奈特 Hamnet",
-    "year": "2025",
-    "douban_id": "35618471"
-  },
-  {
-    "input": "Marty Supreme (Josh Safdie, 2025)",
-    "title": "至尊马蒂 Marty Supreme",
-    "year": "2025",
-    "douban_id": "36691620"
-  },
-  {
-    "input": "Pillion (Harry Lighton, 2025)",
-    "title": "后座 Pillion",
-    "year": "2025",
-    "douban_id": "36885941"
-  },
-  {
-    "input": "Yes (Nadav Lapid, 2025)",
-    "title": "是的 כן",
-    "year": "2025",
-    "douban_id": "36206660"
-  },
-  {
-    "input": "Joan of Arc (Hlynur Pálmason, 2025)",
-    "title": "圣女贞德 Jeanne d&#39;Arc",
-    "year": "2025",
-    "douban_id": "36576275"
-  },
-  {
-    "input": "The Disappearance of Josef Mengele (Kirill Serebrennikov, 2025)",
-    "title": "约瑟夫·门格勒的消失 Das Verschwinden des Josef Mengele",
-    "year": "2025",
-    "douban_id": "36127760"
-  },
-  {
-    "input": "Strange River (Jaume Claret Muxart, 2025)",
-    "title": "奇怪的河流 Estrany riu",
-    "year": "2025",
-    "douban_id": "36564929"
-  },
-  {
-    "input": "La Grazia (Paolo Sorrentino, 2025)",
-    "title": "恩典 La grazia",
-    "year": "2025",
-    "douban_id": "37143216"
-  },
-  {
-    "input": "Voice of Rain That Comes at Night (Igarashi Kohei, 2008)",
-    "title": "夜来风雨声 夜来風雨の声",
-    "year": "2008",
-    "douban_id": "4961144"
-  },
-    {
-      "input": "Orphan (László Nemes, 2025)",
-      "title": "孤儿 Orphan",
-      "year": "2025",
-      "douban_id": "36243544"
-    },
-    {
-      "input": "Mother’s Baby (Johanna Moder, 2025)",
-      "title": "母亲的宝贝 Mother&#39;s Baby",
-      "year": "2025",
-      "douban_id": "36159758"
-    }
+    "douban_id": "36697073"
+  }
 ]

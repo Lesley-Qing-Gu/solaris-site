@@ -59,6 +59,25 @@ export const solarisRatings: Record<string, string> = Object.fromEntries(
   ["Girl", "2.17 (12)"],
   ["La Grazia", "1.33 (6)"],
   ["Scare Out", "1.50 (4)"],
-  ["Pegasus 3", "1.80 (5)"]
+  ["Pegasus 3", "1.80 (5)"],
+  ["The Testament of Ann Lee", "3.20 (5)"],
+  ["Ghost Elephants", "2.67 (3)"],
+  ["Mother's Baby", "2.86 (7)"],
+  ["Phantosmia", "3.67 (6)"],
+  ["Father Mother Sister Brother", "3.19 (21)"],
+  ["The Moment", "2.75 (4)"],
+  ["Videoheaven", "3.00 (2)"],
+  ["The Stranger", "2.90 (10)"],
+  ["Two Prosecutors", "3.17 (6)"],
+  ["Eagles of the Republic", "1.25 (4)"],
+  ["Magellan", "3.67 (9)"],
+  ["Case 137", "2.55 (11)"],
+  ["Debut, or, Objects of the Field of Debris as Currently Catalogued", "3.40 (5)"],
+  ["The Love That Remains", "3.67 (3)"],
+  ["Scarlet", "1.00 (3)"],
+  ["Scream 7", "1.00 (2)"],
+  ["The Bride!", "2.60 (10)"],
+  ["Send Help", "2.30 (10)"],
+  ["Project Hail Mary", "3.59 (17)"]
   ].map(([title, score]) => [normalizeTitle(title), score])
 );
