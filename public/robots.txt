@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solaris-cinema.netlify.app/sitemap.xml

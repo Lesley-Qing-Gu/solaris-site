@@ -126,7 +126,7 @@
         const numbered = reviews.map((r, i) => `[${i}]\n${r}`).join('\n\n');
         const prompt = `Translate the following Chinese film reviews into English. Rules:
 1. Preserve the critic's tone and style.
-2. IMPORTANT: Each individual review MUST be under 550 characters. If a translation would exceed 550 characters, condense it while keeping the key insights.
+2. IMPORTANT: Each individual review MUST be under 500 characters. If a translation would exceed 500 characters, condense it while keeping the key insights.
 3. Keep the [number] markers exactly as-is.
 4. Clean up each review before translating: remove any tags (like #hashtags#), numerical scores (like 8.5, 7.6, 【C+】, 4.5), rating prefixes (like +, ++, +++, +.), and any filler text, shorthand (like w/, Nooo), or stray symbols that are not part of the actual critical content. Start the translation from the first meaningful sentence of the review.
 5. Only output the translated text with the [number] markers, nothing else.
@@ -141,7 +141,42 @@ ${numbered}`;
           translations[parseInt(parts[i])] = parts[i + 1].trim();
         }
 
-        const translated = replaceReviewContents(data, translations);
+        // 直接把翻译结果替换回原始数据，保持结构不变
+        const lines = data.split('\n');
+        const outputLines = [];
+        let rIdx = -1;
+        let skipping = false;
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          const isFilmDir = /^\s*(film|director)\s*[：:]/i.test(trimmed);
+          const isUserA = /^.+?\s+[★☆]+\s*(?:看过|Watched)/i.test(trimmed);
+          const isUserB = /^.+?\s+(?:看过|Watched)\s+[★☆]+/i.test(trimmed);
+          const isTitle = /短评/.test(trimmed) && !/★/.test(trimmed) && !/看过/.test(trimmed);
+          const isUser = isUserA || isUserB;
+
+          if (isTitle || isFilmDir) {
+            skipping = false;
+            outputLines.push(line);
+          } else if (isUser) {
+            rIdx++;
+            skipping = true;
+            outputLines.push(line);
+            if (rIdx < translations.length && translations[rIdx]) {
+              outputLines.push('');
+              outputLines.push(translations[rIdx]);
+            } else {
+              skipping = false; // no translation, keep original
+            }
+          } else if (skipping) {
+            // skip original content line (replaced by translation)
+          } else {
+            outputLines.push(line);
+          }
+        }
+
+        const translated = outputLines.join('\n');
+        console.log('TRANSLATED:', translated);
         status.textContent = '✅ 翻译完成，正在生成卡片...';
         parent.postMessage({ pluginMessage: { type: 'generate', data: translated } }, '*');
       } catch (e) {

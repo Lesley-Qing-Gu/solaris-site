@@ -16,14 +16,14 @@ figma.ui.onmessage = async (msg) => {
     for (const node of textNodes) await figma.loadFontAsync(node.fontName);
 
     // ========== 检测输入格式 ==========
-    const isFilmDirectorFormat = /^film\s*[：:]/im.test(rawText);
+    const isFilmDirectorFormat = /^\s*film\s*[：:]/im.test(rawText);
 
     const cards = [];
 
     if (isFilmDirectorFormat) {
       // ===== 格式B: film:/director: 格式 =====
-      const filmMatch = rawText.match(/^film\s*[：:]\s*(.+)$/im);
-      const dirMatch = rawText.match(/^director\s*[：:]\s*(.+)$/im);
+      const filmMatch = rawText.match(/^\s*film\s*[：:]\s*["']?([^"',\n]+)["']?,?\s*$/im);
+      const dirMatch = rawText.match(/^\s*director\s*[：:]\s*["']?([^"',\n]+)["']?,?\s*$/im);
       const filmName = filmMatch ? filmMatch[1].trim() : "未知电影";
       const director = dirMatch ? dirMatch[1].trim() : "";
 
@@ -34,7 +34,7 @@ figma.ui.onmessage = async (msg) => {
 
       for (const line of lines) {
         const trimmed = line.trim();
-        if (/^film\s*[：:]/i.test(trimmed) || /^director\s*[：:]/i.test(trimmed)) continue;
+        if (/^\s*film\s*[：:]/i.test(trimmed) || /^\s*director\s*[：:]/i.test(trimmed)) continue;
 
         // 格式: 用户名 看过 ★★★ 日期
         const userMatchA = trimmed.match(/^(.+?)\s+看过\s+([★☆]+)\s+(.*)$/);
